@@ -35,12 +35,5 @@ Para poder colaborar, sigue los siguientes pasos:
 2. Clona el repositorio
 3. Abre el repositorio con la opción de "Open folder as Vault"
 4. Habilita las [extensiones](documentation/Obsidian.md#Extensiones)
-5. Instala las [Extensiones Necesarias](README.md#Extensiones%20Necesarias)
+5. Instala las [Extensiones Necesarias](Extensiones%20Necesarias.md)
 6. Configura las [Configuraciones Recomendadas](documentation/Obsidian.md#Configuraciones%20Recomendadas)
-
-## Extensiones Necesarias
-
-Estas son algunas extensiones que se necesitan para poder trabajar
-
-- [Advanced Slides](documentation/Advanced%20Slides.md)
-- [[documentation/Excalidraw]]
