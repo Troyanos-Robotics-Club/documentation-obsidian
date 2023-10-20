@@ -1,6 +1,6 @@
 # Obsidian
 
-Obsidian es un editor de texto con muchas funcionalidades, que sirver para tomar notas, hacer documentación, entre otras cosas. Para más información, puedes leer [la página principal](https://obsidian.md/).
+Obsidian es un editor de texto con muchas funcionalidades, que sirver para tomar notas, hacer documentación, entre otras cosas. Para más información, puedes leer [la página principal](https://obsidian.md/). Tambien puedes ver los videos en [Tutoriales de Obsidian](documentation/Obsidian.md#Tutoriales%20de%20Obsidian)
 
 # ¿Por Qué Obsidian?
 
@@ -20,6 +20,19 @@ No todo es bueno en Obsidian. Por ejemplo:
 
 - No está en la nube, por lo que tienes que hacer un back up de tu repositorio manualmente^[Puedes pagar por el servicio de "Obsidian Sync" o puedes hacerlo manual con Github]
 - No puedes colaborar en *tiempo real*. Sin embargo, esto usualmente no se hace en repositorios de texto
+
+# Setup Obsidian
+
+1. Descarga la [aplicacion](https://obsidian.md/download)
+2. Abre una carpeta (vault)
+3. Empieza a escribir!!
+
+## Setup Para Repositorio
+
+1. Clona el repositorio en tu computadora
+2. Abre Obsidian
+3. Abre el folder como "Open folder as vault"
+4. Empieza a escribir!!
 
 # Tutoriales de Obsidian
 
