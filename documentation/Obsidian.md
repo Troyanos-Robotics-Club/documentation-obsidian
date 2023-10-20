@@ -48,7 +48,7 @@ Aqui hay un tutorial completo de como usarlo. No es necesario que lo veas pero t
 
 # Extensiones
 
-Para poder instalar extensiones, puedes habilitar las extensiones en las configuraciones -> community plugins.
+Para poder instalar extensiones, puedes habilitar las extensiones en las configuraciones -> community plugins. Esto permite que puedas poner extensiones necesarias
 
 
 # Configuraciones Recomendadas
