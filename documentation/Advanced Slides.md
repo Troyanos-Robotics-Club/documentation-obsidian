@@ -1,6 +1,6 @@
 # Advanced Slides
 
-Esta es la extensión que se usa para hacer **presentaciones** en [[documentation/Obsidian]]. Puedes ver la [documentacion en la página oficial](https://mszturc.github.io/obsidian-advanced-slides/)
+Esta es la extensión que se usa para hacer **presentaciones** en [Obsidian](documentation/Obsidian.md). Puedes ver la [documentacion en la página oficial](https://mszturc.github.io/obsidian-advanced-slides/)
 
 # Videos de Apoyo
 
