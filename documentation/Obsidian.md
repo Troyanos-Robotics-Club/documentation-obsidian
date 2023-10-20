@@ -45,3 +45,9 @@ Aunque es muy intuitivo, se recomienda ver los videos para darse una idea de com
 Aqui hay un tutorial completo de como usarlo. No es necesario que lo veas pero te puede ayudar mucho:
 
 ![Tutorial completo](https://www.youtube.com/watch?v=WqKluXIra70)
+
+# Extensiones
+
+Para poder instalar extensiones, puedes habilitar las extensiones en las configuraciones -> community plugins.
+
+
