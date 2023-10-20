@@ -29,14 +29,18 @@ Para poder colaborar, sigue los siguientes pasos:
 8. Después de revisar tus cambios, se puede aceptar o rechazar
 9. Si se acepta, puedes actualizar tu **main** y hacerle **merge** a tu **rama personal**
 
-# Introducción a [Obsidian](documentation/Obsidian.md)
+# Setup Con Obsidian
 
-## Setup de Obsidian
+1. [Instala Obsidian](documentation/Obsidian.md#Setup%20Obsidian)
+2. Clona el repositorio
+3. Abre el repositorio con la opción de "Open folder as Vault"
+4. Habilita las [extensiones](documentation/Obsidian.md#Extensiones)
+5. Instala las [Extensiones Necesarias](README.md#Extensiones%20Necesarias)
+6. Configura las [Configuraciones Recomendadas](documentation/Obsidian.md#Configuraciones%20Recomendadas)
 
 ## Extensiones Necesarias
 
+Estas son algunas extensiones que se necesitan para poder trabajar
 
-### [[documentation/Advanced Slides]]
-### Excalibur
-
-## Configuraciones Recomendadas
+- [Advanced Slides](documentation/Advanced%20Slides.md)
+- [[documentation/Excalidraw]]
