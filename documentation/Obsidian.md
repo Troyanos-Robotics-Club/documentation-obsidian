@@ -52,3 +52,46 @@ Para poder instalar extensiones, puedes habilitar las extensiones en las configu
 
 
 # Configuraciones Recomendadas
+
+Las configuraciones se encuentran en `/.obsidian` en el repositorio. Están en formato *Json* por lo que es muy fácil configuraras de manera manual, aunque tu también puedes hacerlo del UI de la aplicación.
+
+Estás son algunas de las configuraciones recomendadas: 
+
+**File:** `/.obsidian/app.json`
+
+```json
+{
+  "useMarkdownLinks": true,
+  "attachmentFolderPath": "./",
+  "newLinkFormat": "absolute",
+  "alwaysUpdateLinks": true
+}
+```
+
+
+> [!important] Estas son algunas de las configuraciones que sirven mucho, puedes cambiarlas o que se agreguen debajo si necesitas
+
+
+**File:** `/.obsidian/core-plugins.json`
+
+```json
+[
+  "file-explorer",
+  "global-search",
+  "switcher",
+  "graph",
+  "backlink",
+  "canvas",
+  "outgoing-link",
+  "tag-pane",
+  "page-preview",
+  "note-composer",
+  "command-palette",
+  "editor-status",
+  "bookmarks",
+  "outline",
+  "word-count",
+  "workspaces",
+  "file-recovery"
+]
+```
