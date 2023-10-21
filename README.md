@@ -37,3 +37,5 @@ Para poder colaborar, sigue los siguientes pasos:
 4. Habilita las [extensiones](documentation/Obsidian.md#Extensiones)
 5. Instala las [Extensiones Necesarias](Extensiones%20Necesarias.md)
 6. Configura las [Configuraciones Recomendadas](documentation/Obsidian.md#Configuraciones%20Recomendadas)
+
+Con esto puesto, ya eres libre de configurar [Obsidian](documentation/Obsidian.md) como tu necesites!!
