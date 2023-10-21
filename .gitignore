@@ -1,2 +1,4 @@
 
 .obsidian
+exports/*
+!exports/.gitkeep
