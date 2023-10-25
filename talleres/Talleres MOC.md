@@ -2,7 +2,7 @@
 aliases:
   - Talleres
 ---
-[Go back to Home](README.md)
+[Go back to Home](../../../PEF/presentation-PEF/README.md)
 # Talleres MOC
 
 En esta carpeta se puede hacer las presentaciones y contenido para los talleres del club. Si quieres darte una idea de como funciona, puedes ver [Ejemplo Taller](talleres/Ejemplo%20Taller/Ejemplo%20Taller.md)
