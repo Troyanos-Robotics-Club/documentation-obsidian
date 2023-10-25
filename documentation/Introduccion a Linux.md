@@ -70,17 +70,77 @@ Estos comandos sirven para navegar por el FileSystem (FS):
 	- `rm -r <folder>`: Elimina un folder y sus contenido
 	- `rm -rf <anything>`: **Cuidado**, este elimina cualquier cosa sin restricciones
 
-
 # Activar Configuración (.bashrc)
 
+Las terminales se pueden configurar de muchas maneras (e.g):
 
+- Agregar aliases
+- Configuraciones generales
+- Configurar ambientes virtuales
+- Auto completado de commandos
+- Funciones propias
+- Entre otros...
 
+Sin embargo, la manera de que esos cambios sean permanentes, lo puedes poner en el archivo `.bashrc`.
+
+La terminal se inicia de la siguiente manera:
+
+```mermaid
+flowchart LR
+	A[Inicio] --> B
+	B["`Se lee el *.bashrc*`"] --> C[Lista para comandos]
+```
+
+Para *leer* la configuración, se usa el comando `source ~/.bashrc` que sirve para poder activar las configuraciones:
+
+```mermaid
+flowchart LR
+	A[Inicio] --> B
+	B["`source ~/*.bashrc*`"] --> C[Usar la terminal]
+```
+
+Entonces si quieres agregar más configuraciones mientras tengas las terminal abierta, puedes hacer *source* otros archivos:
+
+```mermaid
+flowchart LR
+	subgraph init
+	A[Inicio] --> B
+	B["`source ~/*.bashrc*`"] 
+	end
+
+	subgraph session
+    B --> U[CLI]
+    U --> D["`source *activate.sh*`"]
+    U --> F["`source *config.sh*`"]
+    U --> Z["`source *install.sh*`"]
+    U --> G["`source *.bashrc* again`"]
+	end
+```
+
+Con esto se puede habilitar configuraciones en la session de terminal
 
 # Using Python
 
-## Activar [[Python]] [[Virtual Environments]]
+[Python](documentation/Python.md) es accesible desde la terminal como:
 
+```sh
+$ python3 # en algunas puede ser `python` 
+```
+
+Y puedes correr archivos de la siguiente manera:
+
+```sh
+$ python3 main.py  
+```
+
+Si quieres usar **ambientes virtuales** en [Python](documentation/Python.md), puedes ver la sección de [Ambientes virtuales](documentation/Python.md#Ambientes%20virtuales).
 
 # Using Git
+
+[[Git]] se accede desde la terminal así:
+
+```sh
+$ git --version
+```
 
 [Taller de Git y Github MOC](Taller%20de%20Git%20y%20Github%20MOC)
