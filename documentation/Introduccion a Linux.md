@@ -86,10 +86,12 @@ Sin embargo, la manera de que esos cambios sean permanentes, lo puedes poner en 
 La terminal se inicia de la siguiente manera:
 
 ```mermaid
-flowchart LR
+flowchart 
 	A[Inicio] --> B
 	B["`Se lee el *.bashrc*`"] --> C[Lista para comandos]
 ```
+
+^98a36b
 
 Para *leer* la configuración, se usa el comando `source ~/.bashrc` que sirve para poder activar las configuraciones:
 
@@ -105,17 +107,19 @@ Entonces si quieres agregar más configuraciones mientras tengas las terminal ab
 flowchart LR
 	subgraph init
 	A[Inicio] --> B
-	B["`source ~/*.bashrc*`"] 
+	B["source ~/.bashrc"] 
 	end
 
 	subgraph session
     B --> U[CLI]
-    U --> D["`source *activate.sh*`"]
-    U --> F["`source *config.sh*`"]
-    U --> Z["`source *install.sh*`"]
-    U --> G["`source *.bashrc* again`"]
+    U --> D["source activate.sh"]
+    U --> F["source config.sh"]
+    U --> Z["source install.sh"]
+    U --> G["source .bashrc again"]
 	end
 ```
+
+^2d5420
 
 Con esto se puede habilitar configuraciones en la session de terminal
 
@@ -127,11 +131,15 @@ Con esto se puede habilitar configuraciones en la session de terminal
 $ python3 # en algunas puede ser `python` 
 ```
 
+^a117d1
+
 Y puedes correr archivos de la siguiente manera:
 
 ```sh
 $ python3 main.py  
 ```
+
+^dd2dba
 
 Si quieres usar **ambientes virtuales** en [Python](documentation/Python.md), puedes ver la sección de [Ambientes virtuales](documentation/Python.md#Ambientes%20virtuales).
 
