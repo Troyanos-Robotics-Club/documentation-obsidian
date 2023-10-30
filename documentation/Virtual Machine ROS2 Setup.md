@@ -116,7 +116,7 @@ You will need software use **ros2**:
 
 Before starting to install everything be sure to update and upgrade your system:
 
-```sh
+```bash
 sudo apt update 
 sudo apt upgrade
 sudo apt update 
@@ -149,7 +149,7 @@ Install the following extensions
 
 Terminator is a *terminal multiplexer* enabling to have many terminals opened in a single terminal instance. To install:
 
-```sh
+```bash
 sudo apt install terminator
 ```
 
@@ -161,7 +161,7 @@ This is a useful app that can have several terminals in a single screen. You can
 
 - To install python3 pip enter the command:
 
-```sh
+```bash
 sudo apt install python3-pip
 ```
 
@@ -169,7 +169,7 @@ sudo apt install python3-pip
 
 - To install git enter the command:
 
-```sh
+```bash
 sudo apt install git
 ```
 
@@ -181,13 +181,13 @@ sudo apt install git
    - ROS2 installation (Steps taken from the official guide on <https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html>):
       - Verify you have UTF-8
 
-```sh
+```bash
 locale
 ```
 
 - Enter the following commands (DO NOT SKIP ANY COMMANDS!!):
 
-```sh
+```bash
 sudo apt install software-properties-common
 sudo add-apt-repository universe
 sudo apt update && sudo apt install curl -y
@@ -216,7 +216,7 @@ source /opt/ros/humble/setup.bash && echo "source /opt/ros/humble/setup.bash" >>
 
 - Install ROS2 build tool - colcon
 
-```sh
+```bash
 sudo apt install python3-colcon-common-extensions
 cd
 source /usr/share/colcon\_argcomplete/hook/colcon-argcomplete.bash && echo "source /usr/share/colcon\_argcomplete/hook/colcon-argcomplete.bash" >> .bashrc
@@ -229,7 +229,7 @@ source /usr/share/colcon\_argcomplete/hook/colcon-argcomplete.bash && echo "sour
 
 - Creating a ROS2 workspace
    - Enter the following commands:
-```sh
+```bash
 cd
 mkdir -p ~/ros2\_ws /src/
 cd ~/ros2\_ws/src/
@@ -258,7 +258,7 @@ If something in the installation is wrong, check that the following is correct.
 
 Type:
 
-```sh
+```bash
 cd
 gedit ~/.bashrc
 ```
@@ -275,7 +275,7 @@ source /usr/share/colcon\_argcomplete/hook/colcon-argcomplete.bash
 
 If it doesn’t, add them and save the file. Close all terminals and open them again. Anytime an error occurs, doing this may solve the issue. Another option is to do:
 
-```sh
+```bash
 cd
 source .bashrc
 ```
