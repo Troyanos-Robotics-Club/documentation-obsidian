@@ -22,3 +22,4 @@ Nombre | Fecha
 --- | ---
 [Taller de Git y Github MOC](Taller%20de%20Git%20y%20Github%20MOC) | 20-09-2023
 [Ejemplo Taller](talleres/Ejemplo%20Taller/Ejemplo%20Taller.md) | N/A
+[[Taller ROS]] | 2023-11-08

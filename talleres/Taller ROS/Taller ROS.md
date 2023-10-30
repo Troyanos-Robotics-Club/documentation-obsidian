@@ -6,6 +6,8 @@ aliases:
 
 Taller de ROS
 
+# [[Presentacion Taller ROS]]
+
 # Rercursos
 
 - [Edy's ROS Notes](documentation/Edy's%20ROS%20Notes.md)
