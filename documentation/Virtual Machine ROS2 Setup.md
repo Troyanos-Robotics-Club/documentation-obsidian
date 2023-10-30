@@ -129,6 +129,12 @@ sudo apt autoremove
 
 ![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.018.png)
 
+Also you can install vscode from the terminal: 
+
+```bash
+sudo snap install code --classic
+```
+
 - Open VSCode (You may add a shortcut of VSCode to the side bar by right clicking the icon and selecting add to favorites)
 
 Install the following extensions
