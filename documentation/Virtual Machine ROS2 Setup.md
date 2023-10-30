@@ -55,9 +55,7 @@ On version select *Ubuntu (64-bit)*
 
 ![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.008.png)
 
-![A screenshot of a computer
-
-Description automatically generated](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.009.png)
+![A screenshot of a computer Description automatically generated](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.009.png)
 
 
 
@@ -220,10 +218,6 @@ To see if everything was installed correctly, you may run the following commands
 ![A screenshot of a computer screen Description automatically generated](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.026.png)
 
 If everything works correctly, you should see a screen with a Turtle that chases down the other Turtles that appear on the screen.
-
-
-
-
 
 **Troubleshooting:**
 
