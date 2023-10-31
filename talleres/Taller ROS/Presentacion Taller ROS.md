@@ -245,4 +245,10 @@ Se declaran en un *package* separado y se importan.
 ---
 ## ¿Cómo crear un nodo?
 ### Pasos
-1. Ir al 
+1. Ir al source del workspace
+```bash
+# Ir al src del ws
+$ cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
+
+```
+2. 
