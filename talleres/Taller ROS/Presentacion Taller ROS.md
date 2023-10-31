@@ -210,3 +210,39 @@ note:
 
 1. Activa el ambiente virual
 2. Decir que ahora puedes usar `python normal`
+
+---
+# Paquetes
+
+
+---
+### Esquemática general
+
+Estructura general del funcionamiento de ROS2
+![[diagrama_ejemplo_ros2.png|500]]
+Funcionamiento:
+1. Se crea un *Nodo* con un *Publisher*
+2. Se crea un *Nodo* con un *Subscriber*
+3. *Publisher* manda *mensajes* a un *topic*
+4. *Subscriber* recibe los *mensajes* del mismo *topic*
+
+Un mismo nodo puede tener tantos publishers como subscribers como se desee
+
+---
+### Topics y Messages 
+
+![[topics.png|900]]
+Los *Topics* son los canales por los nodos se comunican.
+Toda la información que fluye por el *topic* debe estar en formato de un *message*.
+
+---
+### Topics y Mensajes
+![[ejemplo_mensaje.png|650]]
+Los *mensajes* son el tipo de **toda la información** que fluye en el *topic*. 
+
+Se declaran en un *package* separado y se importan. 
+
+---
+## ¿Cómo crear un nodo?
+### Pasos
+1. Ir al 
