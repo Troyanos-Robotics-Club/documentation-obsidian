@@ -212,9 +212,15 @@ note:
 2. Decir que ahora puedes usar `python normal`
 
 ---
-### Esquemática general
+<!-- .slide: data-auto-animate -->
+# ROS 2🤖
 
-Estructura general del funcionamiento de ROS2
+---
+### ¿Qué es y para qué sirve? (esto lo hace edy)
+---
+### Funcionamiento general
+
+Esquemática general ejemplo del funcionamiento de ROS2
 ![[diagrama_ejemplo_ros2.png|500]]
 Funcionamiento:
 1. Se crea un *Nodo* con un *Publisher*
@@ -228,12 +234,15 @@ Un mismo nodo puede tener tantos publishers y subscribers como se desee
 ### Paquetes
 Conjunto de nodos que forman una red en ROS2
 ```bash
-# Nos dirigimos al source del workspace
 cd ~/ros2_ws/src
+
 # Creación del paquete llamado ros2_pkg de tipo python
 ros2 pkg create ros2_pkg --build-type ament_python --dependencies rclpy
 cd ..
 colcon build --packages-select ros2_pkg
+
+# Configuración para que ROS2 detecte el paquete
+cd && source ~/ros2_ws/install/setup.bash && echo "source ~/ros2_ws/install/setup.bash" >> .bashrc
 ```
 ---
 ### Topics y Messages 
@@ -243,7 +252,7 @@ Los *Topics* son los canales por los nodos se comunican.
 Toda la información que fluye por el *topic* debe estar en formato de un *message*.
 
 ---
-### Topics y Mensajes
+### Topics y Messages
 ![[ejemplo_mensaje.png|650]]
 Los *mensajes* son el tipo de **toda la información** que fluye en el *topic*. 
 
@@ -271,11 +280,8 @@ cd ..
 ```bash
 cd ~/ros2_ws
 colcon build --packages-select ros2_pkg --symlink-install
-# Configuración para que ROS2 detecte el paquete
-cd
-sudo echo ""
 ```
-%% Mencionar qué es packages-select y symlink-install Mostrar el código de ejemplo y de añadir el ejecutable desde la VM%%
+%% Mencionar qué es packages-select y symlink-install Mostrar el código de ejemplo y de añadir el ejecutable desde la VM. El ejemplo de código lo va a mostrar garza%%
 
 ---
-
+### Interfaces
