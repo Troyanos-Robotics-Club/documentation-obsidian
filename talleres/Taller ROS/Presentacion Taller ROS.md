@@ -198,7 +198,7 @@ Hacer los comandos que vienen en la presentacion
 <!-- .slide: data-auto-animate -->
 ### ⚡🐍Python
 
-Para *activar* el ambiente virual, usamos el comando: 
+Para *activar* el ambiente virtual, usamos el comando: 
 
 ![[Python#^87b519]]
 
@@ -248,7 +248,26 @@ Se declaran en un *package* separado y se importan.
 1. Ir al source del workspace
 ```bash
 # Ir al src del ws
-$ cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
+cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
 
 ```
-2. 
+2. Crear el archivo .py y configurarlo como ejecutable
+```bash
+touch node_name.py
+chmod +x node_name.py
+cd ..
+```
+---
+3. Añadir el ejecutable a ROS2 en *setup.py*
+4. Editar el nodo: Tomar como base la template
+5. Regresar al directorio del workspace y hacer *colcon build*
+```bash
+cd ~/ros2_ws
+colcon build --packages-select ejercicio_taller --symlink-install
+source .bashrc
+```
+%%
+Mencionar qué es packages-select y symlink-install
+Mostrar el código de ejemplo y de añadir el ejecutable desde la VM
+%%
+---
