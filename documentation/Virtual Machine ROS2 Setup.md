@@ -21,7 +21,7 @@ Creating a virtual machine with Ubuntu 22.04 (If already using a Linux computer,
    - Setting up the virtual machine configuration
       1. With VM open, click on *New*
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.001.png)
+![[Pasted image 20231101103852.png]]
 
 1. Enter the name of the computer (it can be whatever you want).
 1. Select the Folder (it can be the default Folder that appears).
@@ -29,36 +29,36 @@ Creating a virtual machine with Ubuntu 22.04 (If already using a Linux computer,
 1. On Type select *Linux*
 1. On version select *Ubuntu (64-bit)*
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.002.png)
+![[Pasted image 20231101103901.png]]
 
 Give the **VM as much RAM and Processors as you can** (normally around 4GBs and 2~3 CPU is enough). This will help the software running be faster and easier to use. In this case I will assign about 10 GB of RAM and 3 CPUs.
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.003.png)
+![[Pasted image 20231101103906.png]]
 
 Assign the Memory the VM will have. 32 GB is sufficient
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.004.png)
+![[Pasted image 20231101103911.png]]
 
 Select Finish
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.005.png)
+![[Pasted image 20231101103915.png]]
 
 Choose the newly created VM and click on *settings*
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.006.png)
+![[Pasted image 20231101103920.png]]
 
 Go to *Storage,* then click on *Empty,* then on the blue disk that appears to the right and select the Ubuntu 22.04 Image downloaded in step 1.2. If it is not recognized in the scroll down section that appears, go the folder where it is downloaded and select it
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.007.png)
+![[Pasted image 20231101103925.png]]
 
 Click *OK* and then *Start.* Anytime you want to change the configuration of the VM you can go to *Settings* and update it (Change RAM, Processors, etc.)
 
 > [!tip] Fullscreen mode
 > If you have a single screen, it is easiest to work in the VM without the VirtualBox full-screen mode. To adjust the screen size, right click in the Ubuntu VM and select “Display Settings”. Here you can adjust the screen size. A recommended view of how it can look is the following:
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.008.png)
+![[Pasted image 20231101103930.png]]
 
-![A screenshot of a computer Description automatically generated](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.009.png)
+![[Pasted image 20231101103935.png]]
 
 ### Ubuntu Setup
 
@@ -67,40 +67,40 @@ When you have installed ubuntu, you can open the virtual machine and start with 
 - Ubuntu Installation
   - Select *Try or Install Ubuntu*
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.010.png)
+![[Pasted image 20231101103941.png]]
 
 Select *Install Ubuntu*
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.011.png)
+![[Pasted image 20231101103945.png]]
 
 Choose your Keyboard Layout and Continue
 
 Proceed with *Normal Installation* and *Download updates while installing Ubuntu*
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.012.png)
+![[Pasted image 20231101103951.png]]
 
 Select *Erase disk and install Ubuntu* (this is only for the VM, your computer’s Disk will remain untouched). Select continue on the pop up that appears
 1. Choose your time zone and continue
 1. Create the computer’s username and password and continue
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.013.png)
+![[Pasted image 20231101103957.png]]
 
 Wait while everything is installed
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.014.png)
+![[Pasted image 20231101104003.png]]
 
 - Once the installation is complete, select *Restart Now* on the pop up that appears. Press *Enter* when asked
 - You may connect your online accounts or just press *Skip*
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.015.png)
+![[Pasted image 20231101104009.png]]
 
 - Select *Skip for now* and click *Next*
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.016.png)
+![[Pasted image 20231101104014.png]]
 
 - If a software updater appears, select *Remind me Later*
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.017.png)
+![[Pasted image 20231101104020.png]]
 
 1. You can choose to send system info or not, then click *Next*
 1. Choose whether or not to use Location Services and then click *Next*
@@ -127,7 +127,7 @@ sudo apt autoremove
 
 - From *Ubuntu Software* select to install Visual Studio Code and open it once finished
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.018.png)
+![[Pasted image 20231101104030.png]]
 
 Also you can install vscode from the terminal: 
 
@@ -139,11 +139,11 @@ sudo snap install code --classic
 
 Install the following extensions
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.019.png)
+![[Pasted image 20231101104036.png]]
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.020.png)
+![[Pasted image 20231101104040.png]]
 
-![](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.021.png)
+![[Pasted image 20231101104046.png]]
 
 ## Terminator
 
@@ -155,7 +155,7 @@ sudo apt install terminator
 
 This is a useful app that can have several terminals in a single screen. You can use CTRL+SHIFT+O to split the screen horizontally or CTRL+SHIFT+E to split the screen vertically. For more info go to the following link: <https://www.makeuseof.com/run-multiple-linux-terminals-with-terminator/?newsletter_popup=1>
 
-![A screenshot of a computer Description automatically generated](Aspose.Words.58c94682-248e-4856-9434-7291b8c5d500.025.png)
+![[Pasted image 20231101104054.png]]
 
 ## Pip
 
