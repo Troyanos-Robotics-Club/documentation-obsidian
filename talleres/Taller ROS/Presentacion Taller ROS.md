@@ -212,10 +212,6 @@ note:
 2. Decir que ahora puedes usar `python normal`
 
 ---
-# Paquetes
-
-
----
 ### Esquemática general
 
 Estructura general del funcionamiento de ROS2
@@ -225,9 +221,20 @@ Funcionamiento:
 2. Se crea un *Nodo* con un *Subscriber*
 3. *Publisher* manda *mensajes* a un *topic*
 4. *Subscriber* recibe los *mensajes* del mismo *topic*
-
-Un mismo nodo puede tener tantos publishers como subscribers como se desee
-
+Un mismo nodo puede tener tantos publishers y subscribers como se desee
+---
+### Workspaces (lo hace garza)
+---
+### Paquetes
+Conjunto de nodos que forman una red en ROS2
+```bash
+# Nos dirigimos al source del workspace
+cd ~/ros2_ws/src
+# Creación del paquete llamado ros2_pkg de tipo python
+ros2 pkg create ros2_pkg --build-type ament_python --dependencies rclpy
+cd ..
+colcon build --packages-select ros2_pkg
+```
 ---
 ### Topics y Messages 
 
@@ -263,11 +270,12 @@ cd ..
 5. Regresar al directorio del workspace y hacer *colcon build*
 ```bash
 cd ~/ros2_ws
-colcon build --packages-select ejercicio_taller --symlink-install
-source .bashrc
+colcon build --packages-select ros2_pkg --symlink-install
+# Configuración para que ROS2 detecte el paquete
+cd
+sudo echo ""
 ```
-%%
-Mencionar qué es packages-select y symlink-install
-Mostrar el código de ejemplo y de añadir el ejecutable desde la VM
-%%
+%% Mencionar qué es packages-select y symlink-install Mostrar el código de ejemplo y de añadir el ejecutable desde la VM%%
+
 ---
+
