@@ -250,4 +250,64 @@ gedit ~/.bashrc
 
 Ve hasta abajo del documento y se deben ver las siguientes 3 líneas:
 
-![[Pasted image 20231101215019.png]]
+![[Pasted image 20231101215019.png]]---
+### Turtlesim
+
+Turtlesim es un paquete ya incluido al instalar ROS2 que tiene una versión simplificada de una simulación de un robot
+
+Para instalar turtlesim corre el siguiente comando:
+
+```bash
+sudo apt install ros-humble-turtlesim
+```
+
+Ahora, asegúrate de tener todas las terminales sourceadas con
+
+``` bash
+source ~/.bashrc
+```
+
+Para correr la interfaz de turtlesim corre lo siguiente en una terminal:
+
+```bash
+ros2 run turtlesim turtlesim_node
+```
+
+Ahora en una terminal diferente:
+
+``` bash
+ros2 run turtlesim turtle_teleop_key
+```
+
+Mientras estas en la terminal de teleopkey, puedes controlar la tortuga de la interfaz
+
+---
+Ahora para ver un ejemplo de lo que se puede llegar a hacer, corre el siguiente comando
+
+``` bash
+cd
+cd ~/ros2_ws/src/
+git clone https://github.com/davidogarzas/taller_ros.git
+cd ..
+colcon build
+source ~/ros2_ws/install/setup.bash
+```
+
+Ahora se requeriran 4 terminales. Para cada terminal, corre los siguientes comandos:
+``` bash
+ros2 run turtlesim turtlesim_node
+```
+
+``` bash
+ros2 run turtle3 manager
+```
+
+``` bash
+ros2 run turtle3 movement
+```
+
+``` bash
+ros2 run turtle3 spawner
+```
+
+Ahora deberás ver un programa en el que automáticamente aparecen tortugas en la interfaz y la tortuga principal persigue y atrapa a las tortugas que aparecen
