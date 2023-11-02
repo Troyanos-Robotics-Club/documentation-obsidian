@@ -13,9 +13,42 @@
 
 - [[Virtual Machine ROS2 Setup]]
 
-# ROS Vs ROS2
+# Tutorial
 
-## **ROS**
+## Servicios Y Clientes
+
+## RQT
+
+`rqt` es un comando que te permite tener un panel GUI para poder ver el estado de tu sistema, sin tener que hacer comandos en la terminal
+
+```bash
+rqt
+```
+
+![[rqt-graph-gui.png]]
+
+Para poder acceder a las diferentes vistas, puedes usar los **Plugins** en el menú superior. Algunos importantes son:
+
+- Node graph: Grafica los servicios y los nodos
+- Topic Monitor: Monitorea los topics
+- Message Publisher: Publica mensaje a los topics
+- Service caller: Manda mensajes a los servicios
+
+### RQT Graph
+
+`rqt_graph` es un comando que despliega la gráfica de los nodos corriendo.
+
+```sh
+rqt_graph
+```
+
+![[rqt_graph-gui.png]]
+
+# Overview
+
+## ROS Vs ROS2
+
+### **ROS**
 
 - Developed in 2007
 - Tailored for small-scale, research-focused projects
@@ -26,7 +59,7 @@
 - Not designed with security in mind
 - Custom serialization
 
-## **ROS2**
+### **ROS2**
 
 - Launched in 2017
 - Suitable for large-scale, industrial and commercial applications
@@ -37,7 +70,7 @@
 - Enhanced security features (authentication, encryption)
 - Standardized serialization (CDR)
 
-## **Why We Chose ROS2**
+### **Why We Chose ROS2**
 
 - **Scalability**: Adaptability to large-scale and complex systems.
 - **Real-time Computing**: Predictable execution suitable for critical applications.
@@ -48,7 +81,7 @@
 > [!danger] ROS 1 está en su final de vida
 > Próximamente será descontinuado
 
-# Use Cases
+## Use Cases
 
 1. **Autonomous Vehicles:** ROS2's real-time capabilities and improved security are critical for the development and operation of self-driving cars, drones, and underwater vehicles.
 1. **Industrial Automation:** Robotics arms, automated guided vehicles (AGVs), and other robotic systems in manufacturing and logistics can benefit from ROS2's improved communication and control features.
