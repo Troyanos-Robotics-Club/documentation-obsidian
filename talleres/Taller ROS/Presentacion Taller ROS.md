@@ -4,7 +4,113 @@ slideNumber: true
 theme: beige
 ---
 
-# Bienvenidxs a ROS2
+# Bienvenidxs a Introducción ROS2
+
+---
+
+## ¿Qué Es ROS?
+
+**Robotic Operating System (ROS)** es un set the software y herramientas para escribir **aplicaciones** para robots
+
+[Video de introducción de ROS](https://vimeo.com/639236696)
+
+---
+### ¿Porqué Es ROS?
+
+Permite la integración entre múltiples sensores, algoritmos y comandos de una manera más amigable
+
+![Imagen de robots comunicandose](https://prod-discovery.edx-cdn.org/media/course/image/bf9f18e0-2bab-4600-ae3e-64d0743d9482-321df2b18306.small.png)
+
+Puedes levantar varios nodos que corrar de menera simultanea, sin necesdidad de configurar **multitrehading** o la comunicación
+
+---
+
+# ROS O ROS2?
+
+🤔
+
+note: 
+
+Decir que ROS es el predecesor
+
+---
+
+## Diferencia Entre ROS Y ROS2
+
+**ROS2** es el sucessor de **ROS**. Tiene más features como:
+
+- Usa python3.7 y C++11
+- Puedes grabar archivos "bag" para guardar datos del proecso
+- Tiene serguirdad integrada
+- Aplicable para aplicaciones de tiempo real
+- Maneja aplicaciones a grande escala, industriales y comerciales
+
+---
+
+### 💀ROS va a ser descontinuado
+
+---
+
+### 🦸ROS2 sigue en constante desarrollo
+
+note: 
+
+Decir que a partir de ahora, siempre que digamos "ros" nos referimos a **ros2**
+
+---
+
+<!-- .slide: data-auto-animate -->
+
+### ¿Dónde se usa ROS?
+
+- Autonomous Vehicles
+- Industrial Automation
+- Internet of Things (IoT)
+- Healthcare Robotics
+- Aerospace
+- Collaborative Robots (Cobots)
+- Research and Education
+
+note: 
+
+1. **Autonomous Vehicles:**  ROS2's real-time capabilities and improved security are critical for the development and operation of self-driving cars, drones, and underwater vehicles.
+1. **Industrial Automation:**  Robotics arms, automated guided vehicles (AGVs), and other robotic systems in manufacturing and logistics can benefit from ROS2's improved communication and control features.
+1. **Internet of Things (IoT):**  ROS2 can facilitate the integration of robots with sensors and other IoT devices in smart homes, smart cities, and smart factories due to its support for diverse communication protocols.
+1. **Healthcare Robotics:**  In surgical robots, rehabilitation devices, and hospital logistics robots, ROS2's real-time processing and enhanced security ensure safe and reliable operations.
+1. **Aerospace:**  For drones and rovers used in exploration, mapping, and surveillance, ROS2 offers robustness and the ability to handle complex communication systems.
+1. **Collaborative Robots (Cobots):**  ROS2's features support better human-robot interaction, necessary for cobots working alongside humans in shared workspaces.
+1. **Research and Education:**  Academic institutions can use ROS2 for cutting-edge research in robotics, ensuring that students and researchers are working with industry-standard tools.
+
+---
+
+<!-- .slide: data-auto-animate -->
+
+### ¿Dónde se usa ROS?
+
+- Entertainment
+- Agriculture
+- Search and Rescue Missions
+- Marine Robotics
+- Service Robots
+- Military and Defense
+- Space Exploration
+
+note: 
+
+[Ejemplos de ros](https://design.ros2.org/articles/why_ros2.html)
+
+Ejemplos de aplicaciones: 
+
+1. **Entertainment:**  Theme parks and entertainment industries can employ ROS2 to control animatronics and interactive robots for enhanced audience experiences.
+1. **Agriculture:**  For precision agriculture, ROS2 can help manage fleets of agricultural robots used for planting, monitoring crops, and harvesting.
+1. **Search and Rescue Missions:**  ROS2's reliable communication system is ideal for coordinating multiple robots in challenging environments during search and rescue operations.
+1. **Marine Robotics:**  In underwater exploration and monitoring, ROS2's support for robust, distributed systems is invaluable for managing complex tasks and data collection.
+1. **Service Robots:**  For robots that operate in service industries, like those in hospitality or retail, ROS2's enhanced interaction capabilities and security features are crucial.
+1. **Military and Defense:**  ROS2 can be used to develop and deploy robots for surveillance, bomb disposal, and logistics support in defense applications.
+1. **Space Exploration:**  Space rovers and robotic assistants for astronauts can be developed using ROS2, taking advantage of its robustness and advanced communication capabilities.
+
+---
+### 🤖¿Listos para aprender?
 
 
 ---
@@ -125,7 +231,6 @@ Si los usuarios no están usando bash, comentar que puede ser `.zhrc` o algo par
 <!-- .slide: data-auto-animate -->
 ### ⚡⚙Agregar Configuraciones
 
-
 Puedes agregar más configuraciones en *la sessión* usando el comando de `source`
 
 ```sh
@@ -135,7 +240,6 @@ $ source ~/.config.sh
 $ source ~/.install.sh
 
 ```
-
 
 ---
 
@@ -162,7 +266,7 @@ Puedes usar **Python** desde la terminal:
 
 ![[Introduccion a Linux#^dd2dba]]
 
-note: 
+note:
 
 Hacer un ejemplo de un `hello world`
 
@@ -189,7 +293,7 @@ Se crea una carpeta `.venv` con las dependencias de python
 
 %% No se si se tiene que mostrar esto! %%
 
-note: 
+note:
 
 Hacer los comandos que vienen en la presentacion
 
@@ -198,7 +302,7 @@ Hacer los comandos que vienen en la presentacion
 <!-- .slide: data-auto-animate -->
 ### ⚡🐍Python
 
-Para *activar* el ambiente virual, usamos el comando: 
+Para *activar* el ambiente virual, usamos el comando:
 
 ![[Python#^87b519]]
 
@@ -206,7 +310,7 @@ Con esto, nuestro `python` cambia a usar el de la carpeta `.venv`
 
 %% No se si se tiene que mostrar esto! %%
 
-note: 
+note:
 
 1. Activa el ambiente virual
 2. Decir que ahora puedes usar `python normal`
