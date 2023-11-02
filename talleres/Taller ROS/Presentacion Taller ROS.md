@@ -217,10 +217,8 @@ Que es y para que sirve (Edy)
 ---
 <!-- .slide: data-auto-animate -->
 ### Workspaces
-
 El workspace es donde se va a hacer todo el código de la aplicación de ROS2
 Para crear un workspace se hace lo siguiente
-
 ```bash
 cd
 mkdir ros2_ws
@@ -228,12 +226,9 @@ cd ros2_ws
 mkdir src
 colcon build
 ```
-
 Ahora el ros2_ws debe contener 4 folders:
-1. build
-2. install
-3. log
-4. src
+
+-build -install -log -src
 
 ---
 Ahora se requiere hacer source del **~/ros2_ws/install/setup.bash** para que cada vez que se abra la terminal se detecte este workspace
@@ -244,7 +239,7 @@ Para hacer source y agregarlo al bashrc se puede correr el siguiente comando:
 cd
 source ~/ros2_ws/install/setup.bash && echo "source ~/ros2_ws/install/setup.bash" >> .bashrc
 ```
-
+---
 Para confirmar que todo el environment de ROS2 esté configurado correctamente, corre el siguiente comando:
 ```bash
 cd
@@ -253,8 +248,11 @@ gedit ~/.bashrc
 
 Ve hasta abajo del documento y se deben ver las siguientes 3 líneas:
 
-![[Pasted image 20231101215019.png]]---
-### Turtlesim
+---
+![[Pasted image 20231101215019.png]]
+
+---
+### Turtlesim 🐢
 
 Turtlesim es un paquete ya incluido de ROS2 que tiene una versión simplificada de una simulación de un robot
 
@@ -267,9 +265,10 @@ sudo apt install ros-humble-turtlesim
 Ahora, asegúrate de tener todas las terminales sourceadas con
 
 ``` bash
-source ~/.bashrc
+source .bashrc
 ```
 
+---
 Para correr la interfaz de turtlesim corre lo siguiente en una terminal:
 
 ```bash
@@ -296,6 +295,7 @@ colcon build
 source ~/ros2_ws/install/setup.bash
 ```
 
+---
 Ahora se requeriran 4 terminales. Para cada terminal, corre los siguientes comandos:
 
 ``` bash
