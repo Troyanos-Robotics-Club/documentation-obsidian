@@ -218,6 +218,8 @@ note:
 ---
 ### ¿Qué es y para qué sirve? (esto lo hace edy)
 ---
+### Workspaces (lo hace garza)
+---
 ### Funcionamiento general
 
 Esquemática general ejemplo del funcionamiento de ROS2
@@ -228,8 +230,6 @@ Funcionamiento:
 3. *Publisher* manda *mensajes* a un *topic*
 4. *Subscriber* recibe los *mensajes* del mismo *topic*
 Un mismo nodo puede tener tantos publishers y subscribers como se desee
----
-### Workspaces (lo hace garza)
 ---
 ### Paquetes
 Conjunto de nodos que forman una red en ROS2
@@ -242,7 +242,7 @@ cd ..
 colcon build --packages-select ros2_pkg
 
 # Configuración para que ROS2 detecte el paquete
-cd && source ~/ros2_ws/install/setup.bash && echo "source ~/ros2_ws/install/setup.bash" >> .bashrc
+source .bashrc
 ```
 ---
 ### Topics y Messages 
@@ -284,4 +284,13 @@ colcon build --packages-select ros2_pkg --symlink-install
 %% Mencionar qué es packages-select y symlink-install Mostrar el código de ejemplo y de añadir el ejecutable desde la VM. El ejemplo de código lo va a mostrar garza%%
 
 ---
+# Template de nodo (garza)
+
+---
 ### Interfaces
+ros2 topic list
+ros2 topic info /topic
+ros2 interface show /interface
+ros2 interface list
+
+### Crear una interfaz
