@@ -4,7 +4,7 @@ tags:
   - documentation
 description: Notas personales de Edy
 ---
-# TLDR [[ROS]]
+# TLDR [[ROS2]]
 
 ROS es un sistema para comunicación entre robots. Es muy útil para controlarlos y ya tiene muchas librerías incluidas.
 

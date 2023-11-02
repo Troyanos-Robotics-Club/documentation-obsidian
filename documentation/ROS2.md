@@ -1,3 +1,7 @@
+---
+aliases:
+  - ROS
+---
 # TLDR
 
 **Robotic Operating System** (ROS2) es un framework de herramientas para programar robots. Puedes ver [[Presentacion Taller ROS]] para que te des una idea rápida de como funciona
