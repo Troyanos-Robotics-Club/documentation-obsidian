@@ -212,10 +212,13 @@ note:
 2. Decir que ahora puedes usar `python normal`
 
 ---
+Que es y para que sirve (Edy)
+
+---
 <!-- .slide: data-auto-animate -->
 ### Workspaces
 
-El workspace es donde se va a hacer todo el código de la aplicación
+El workspace es donde se va a hacer todo el código de la aplicación de ROS2
 Para crear un workspace se hace lo siguiente
 
 ```bash
@@ -227,13 +230,13 @@ colcon build
 ```
 
 Ahora el ros2_ws debe contener 4 folders:
--build
--install
--log
--src
+1. build
+2. install
+3. log
+4. src
 
 ---
-Ahora se requiere hacer source del ~/ros2_ws/install/setup.bash para que cada vez que se abra la terminal se detecte este workspace
+Ahora se requiere hacer source del **~/ros2_ws/install/setup.bash** para que cada vez que se abra la terminal se detecte este workspace
 
 Para hacer source y agregarlo al bashrc se puede correr el siguiente comando:
 
@@ -253,7 +256,7 @@ Ve hasta abajo del documento y se deben ver las siguientes 3 líneas:
 ![[Pasted image 20231101215019.png]]---
 ### Turtlesim
 
-Turtlesim es un paquete ya incluido al instalar ROS2 que tiene una versión simplificada de una simulación de un robot
+Turtlesim es un paquete ya incluido de ROS2 que tiene una versión simplificada de una simulación de un robot
 
 Para instalar turtlesim corre el siguiente comando:
 
@@ -282,7 +285,7 @@ ros2 run turtlesim turtle_teleop_key
 Mientras estas en la terminal de teleopkey, puedes controlar la tortuga de la interfaz
 
 ---
-Ahora para ver un ejemplo de lo que se puede llegar a hacer, corre el siguiente comando
+Ahora para ver un ejemplo de lo que se puede llegar a hacer con esta simple aplicación, corre el siguiente comando
 
 ``` bash
 cd
@@ -294,6 +297,7 @@ source ~/ros2_ws/install/setup.bash
 ```
 
 Ahora se requeriran 4 terminales. Para cada terminal, corre los siguientes comandos:
+
 ``` bash
 ros2 run turtlesim turtlesim_node
 ```
