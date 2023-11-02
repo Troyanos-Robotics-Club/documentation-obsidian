@@ -351,3 +351,33 @@ note:
 
 1. Activa el ambiente virual
 2. Decir que ahora puedes usar `python normal`
+
+---
+
+### 😵Mucha terminal
+
+
+A veces muchos nodos están interactuando, y se vuelve complicado ver como se relacionan
+
+note: 
+
+Mencionar que puede que tengas muchos topics y quieres verlos de manera gráfica
+
+---
+
+## RQT Graph
+
+`rqt_graph` es un comando que despliega la gráfica de los nodos corriendo. 
+
+```sh
+rqt_graph
+```
+
+![[rqt_graph-gui.png|600]]
+
+note: 
+
+Mostrar el ejemplo practico en clase antes de mostrarlo, y luego muestras el `rqt_graph`
+
+
+
