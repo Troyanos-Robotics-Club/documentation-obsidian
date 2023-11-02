@@ -210,3 +210,44 @@ note:
 
 1. Activa el ambiente virual
 2. Decir que ahora puedes usar `python normal`
+
+---
+<!-- .slide: data-auto-animate -->
+### Workspaces
+
+El workspace es donde se va a hacer todo el código de la aplicación
+Para crear un workspace se hace lo siguiente
+
+```bash
+cd
+mkdir ros2_ws
+cd ros2_ws
+mkdir src
+colcon build
+```
+
+Ahora el ros2_ws debe contener 4 folders:
+-build
+-install
+-log
+-src
+
+---
+Ahora se requiere hacer source del ~/ros2_ws/install/setup.bash para que cada vez que se abra la terminal se detecte este workspace
+
+Para hacer source y agregarlo al bashrc se puede correr el siguiente comando:
+
+```bash
+cd
+source ~/ros2_ws/install/setup.bash && echo "source ~/ros2_ws/install/setup.bash" >> .bashrc
+```
+
+Para confirmar que todo el environment de ROS2 esté configurado correctamente, corre el siguiente comando:
+```bash
+cd
+gedit ~/.bashrc
+```
+
+Ve hasta abajo del documento y se deben ver las siguientes 3 líneas:
+
+![[Pasted image 20231101215019.png]]
