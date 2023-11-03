@@ -198,7 +198,7 @@ Hacer los comandos que vienen en la presentacion
 <!-- .slide: data-auto-animate -->
 ### ⚡🐍Python
 
-Para *activar* el ambiente virual, usamos el comando: 
+Para *activar* el ambiente virtual, usamos el comando: 
 
 ![[Python#^87b519]]
 
@@ -212,6 +212,7 @@ note:
 2. Decir que ahora puedes usar `python normal`
 
 ---
+<<<<<<< HEAD
 Que es y para que sirve (Edy)
 
 ---
@@ -315,3 +316,87 @@ ros2 run turtle3 spawner
 ```
 
 Ahora deberás ver un programa en el que automáticamente aparecen tortugas en la interfaz y la tortuga principal persigue y atrapa a las tortugas que aparecen
+=======
+<!-- .slide: data-auto-animate -->
+# ROS 2🤖
+
+---
+### ¿Qué es y para qué sirve? (esto lo hace edy)
+---
+### Workspaces (lo hace garza)
+---
+### Funcionamiento general
+
+Esquemática general ejemplo del funcionamiento de ROS2
+![[diagrama_ejemplo_ros2.png|500]]
+Funcionamiento:
+1. Se crea un *Nodo* con un *Publisher*
+2. Se crea un *Nodo* con un *Subscriber*
+3. *Publisher* manda *mensajes* a un *topic*
+4. *Subscriber* recibe los *mensajes* del mismo *topic*
+Un mismo nodo puede tener tantos publishers y subscribers como se desee
+---
+### Paquetes
+Conjunto de nodos que forman una red en ROS2
+```bash
+cd ~/ros2_ws/src
+
+# Creación del paquete llamado ros2_pkg de tipo python
+ros2 pkg create ros2_pkg --build-type ament_python --dependencies rclpy
+cd ..
+colcon build --packages-select ros2_pkg
+
+# Configuración para que ROS2 detecte el paquete
+source .bashrc
+```
+---
+### Topics y Messages 
+
+![[topics.png|900]]
+Los *Topics* son los canales por los nodos se comunican.
+Toda la información que fluye por el *topic* debe estar en formato de un *message*.
+
+---
+### Topics y Messages
+![[ejemplo_mensaje.png|650]]
+Los *mensajes* son el tipo de **toda la información** que fluye en el *topic*. 
+
+Se declaran en un *package* separado y se importan. 
+
+---
+## ¿Cómo crear un nodo?
+### Pasos
+1. Ir al source del workspace
+```bash
+# Ir al src del ws
+cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
+
+```
+2. Crear el archivo .py y configurarlo como ejecutable
+```bash
+touch node_name.py
+chmod +x node_name.py
+cd ..
+```
+---
+3. Añadir el ejecutable a ROS2 en *setup.py*
+4. Editar el nodo: Tomar como base la template
+5. Regresar al directorio del workspace y hacer *colcon build*
+```bash
+cd ~/ros2_ws
+colcon build --packages-select ros2_pkg --symlink-install
+```
+%% Mencionar qué es packages-select y symlink-install Mostrar el código de ejemplo y de añadir el ejecutable desde la VM. El ejemplo de código lo va a mostrar garza%%
+
+---
+# Template de nodo (garza)
+
+---
+### Interfaces
+ros2 topic list
+ros2 topic info /topic
+ros2 interface show /interface
+ros2 interface list
+
+### Crear una interfaz
+>>>>>>> villa/taller-ros
