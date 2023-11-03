@@ -8,6 +8,16 @@ Taller de ROS
 
 # [[Presentacion Taller ROS]]
 
+# Ejercicios
+
+## Casita Controlada Por ROS
+
+![[Overview Raspberry Example.excalidraw]]
+
+## Carrito Controlado Por ROS
+
+*Pending*
+
 # Rercursos
 
 - [Edy's ROS Notes](documentation/Edy's%20ROS%20Notes.md)
