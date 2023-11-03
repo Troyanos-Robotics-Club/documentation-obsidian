@@ -293,4 +293,8 @@ ros2 topic info /topic
 ros2 interface show /interface
 ros2 interface list
 
-### Crear una interfaz
+---
+### Crear una interfaz (garza)
+---
+### Ejemplo práctico
+Hagamos un caso 
