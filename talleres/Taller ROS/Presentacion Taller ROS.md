@@ -219,6 +219,7 @@ Que es y para que sirve (Edy)
 <!-- .slide: data-auto-animate -->
 ### Workspaces
 El workspace es donde se va a hacer todo el código de la aplicación de ROS2
+
 Para crear un workspace se hace lo siguiente
 ```bash
 cd
@@ -382,8 +383,35 @@ colcon build --packages-select ros2_pkg --symlink-install
 %% Mencionar qué es packages-select y symlink-install Mostrar el código de ejemplo y de añadir el ejecutable desde la VM. El ejemplo de código lo va a mostrar garza%%
 
 ---
-# Template de Nodo
+## Template Nodo
+```python
+import RPi.GPIO as GPIO
+import rclpy
+from rclpy.node import Node
 
+class NodeName(Node):
+    def __init__(self) -> None:
+        super().__init__('node_name')
+        # Create Publishers
+        # Create Subscribers
+        # Initialize attributes
+        # Create timers
+    # Create callback methods (subscribers and timers)
+```
+---
+```python
+def main(args=None) -> None:
+    rclpy.init(args=args)
+    node_name= NodeName()
+    rclpy.spin(node_name)
+    node_name.destroy_node()
+    rclpy.shutdown()
+if __name__=='__main__':
+    try:
+        main()
+    except Exception as e:
+        print(e)
+```
 
 ---
 ### Interfaces
