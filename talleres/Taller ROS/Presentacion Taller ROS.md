@@ -249,9 +249,11 @@ gedit ~/.bashrc
 ```
 
 Ve hasta abajo del documento y se deben ver las siguientes 3 líneas:
-
----
-![[Pasted image 20231101215019.png]]
+``` gedit
+source /opt/ros/humble/setup.bash
+source ~/ros2_ws/install/setup.bash
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+```
 
 ---
 ### Turtlesim 🐢
@@ -283,8 +285,9 @@ Ahora en una terminal diferente:
 ros2 run turtlesim turtle_teleop_key
 ```
 
+---
 Mientras estas en la terminal de teleopkey, puedes controlar la tortuga de la interfaz
-
+![[Correr Turtlesim.png]]
 ---
 Ahora para ver un ejemplo de lo que se puede llegar a hacer con esta simple aplicación, corre el siguiente comando
 
@@ -316,7 +319,9 @@ ros2 run turtle3 movement
 ros2 run turtle3 spawner
 ```
 
-Ahora deberás ver un programa en el que automáticamente aparecen tortugas en la interfaz y la tortuga principal persigue y atrapa a las tortugas que aparecen
+---
+
+![[turtle_chaser.png]]
 
 ---
 ### Funcionamiento general
@@ -386,6 +391,9 @@ colcon build --packages-select ros2_pkg --symlink-install
 
 ---
 ## Template Nodo
+Un nodo se divide en dos partes
+
+Esta es la sección que se edita para hacer el funcionamiento deseado
 ```python
 import RPi.GPIO as GPIO
 import rclpy
@@ -401,6 +409,10 @@ class NodeName(Node):
     # Create callback methods (subscribers and timers)
 ```
 ---
+Esta sección siempre es la misma para todos los nodos, lo único que hay que cambiar son:
+- node_name
+- NodeName()
+
 ```python
 def main(args=None) -> None:
     rclpy.init(args=args)
@@ -415,8 +427,82 @@ if __name__=='__main__':
         print(e)
 ```
 ---
-## Agregar Publishers
+## Agregar atributos (variables)
+``` python
+import RPi.GPIO as GPIO
+import rclpy
+from rclpy.node import Node
+
+class ExampleNode(Node):
+    def __init__(self) -> None:
+        super().__init__('example_node')
+        # Create Publishers
+        # Create Subscribers
+        # Initialize attributes
+        self.counter = 0
+        # Create timers
+    # Create callback methods (subscribers and timers)
+```
+---
+## Agregar Timers
+Para crear un timer se requiere de dos partes:
+- La variable que mantiene cuenta del tiempo
+- El callback que se ejecuta cada vez que se alcanza el tiempo establecido
+---
+
 ```python
+import RPi.GPIO as GPIO
+import rclpy
+from rclpy.node import Node
+
+class ExampleNode(Node):
+    def __init__(self) -> None:
+        super().__init__('example_node')
+        # Create Publishers
+        # Create Subscribers
+        # Initialize attributes
+        self.counter = 0
+        # Create timers
+        self.timer = self.create_timer(
+	        1.0,self.timer_callback)
+    # Create callback methods (subscribers and timers)
+    def timer_callback(self):
+	    self.counter = self.counter + 1
+```
+---
+
+## Agregar Publishers
+Para crear un publisher se requieren de dos partes:
+- La variable que contiene el tipo de mensaje y a que topic se va a publicar
+- El call para hacer el publish
+---
+Por ejemplo, para hacer un publish de un String:
+```python
+import RPi.GPIO as GPIO
+import rclpy
+from rclpy.node import Node
+from example_interfaces.msg import String
+
+class ExampleNode(Node):
+    def __init__(self) -> None:
+        super().__init__('example_node')
+        # Create Publishers
+        self.example_publisher = self.create_publisher(
+	        String,"example_topic",10)
+        # Create Subscribers
+        # Initialize attributes
+        self.counter = 0
+        # Create timers
+        self.timer = self.create_timer(
+	        1.0,self.timer_callback)
+    # Create callback methods (subscribers and timers)
+    def timer_callback(self):
+	    msg = String()
+	    msg.data = "Hello World" + str(counter)
+	    self.example_publisher.publish(msg)
+	    self.counter = self.counter + 1
+```
+---
 
 ```
 ---
