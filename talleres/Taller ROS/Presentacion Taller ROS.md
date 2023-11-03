@@ -391,11 +391,10 @@ colcon build --packages-select ros2_pkg --symlink-install
 
 ---
 ## Template Nodo
-Un nodo se divide en dos partes
+Un nodo se divide en dos partes principales
 
 Esta es la sección que se edita para hacer el funcionamiento deseado
 ```python
-import RPi.GPIO as GPIO
 import rclpy
 from rclpy.node import Node
 
@@ -427,9 +426,54 @@ if __name__=='__main__':
         print(e)
 ```
 ---
+## Crear ejemplo de Nodo Publisher
+Primero se crea un nuevo nodo llamado my_first_publisher.py
+```bash
+cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
+touch my_first_publisher.py
+chmod +x my_first_publisher.py
+```
+---
+### Copiar código de template al nuevo nodo y editar NodeName y node_name
+``` python
+import rclpy
+from rclpy.node import Node
+
+class MyFirstPublisher(Node):
+    def __init__(self) -> None:
+        super().__init__('my_first_publisher')
+        # Create Publishers
+        # Create Subscribers
+        # Initialize attributes
+        # Create timers
+    # Create callback methods (subscribers and timers)
+```
+---
+```python
+def main(args=None) -> None:
+    rclpy.init(args=args)
+    my_first_publisher= MyFirstPublisher()
+    rclpy.spin(my_first_publisher)
+    my_first_publisher.destroy_node()
+    rclpy.shutdown()
+if __name__=='__main__':
+    try:
+        main()
+    except Exception as e:
+        print(e)
+```
+---
+## Agregar ejecutable al setup.py
+``` python
+entry_points = {
+	'console_scripts': [
+			"MyFirstPublisher = ros2_pkg.my_first_publisher:main"
+		],
+}
+```
+---
 ## Agregar atributos (variables)
 ``` python
-import RPi.GPIO as GPIO
 import rclpy
 from rclpy.node import Node
 
@@ -451,7 +495,6 @@ Para crear un timer se requiere de dos partes:
 ---
 
 ```python
-import RPi.GPIO as GPIO
 import rclpy
 from rclpy.node import Node
 
@@ -476,9 +519,8 @@ Para crear un publisher se requieren de dos partes:
 - La variable que contiene el tipo de mensaje y a que topic se va a publicar
 - El call para hacer el publish
 ---
-Por ejemplo, para hacer un publish de un String:
+
 ```python
-import RPi.GPIO as GPIO
 import rclpy
 from rclpy.node import Node
 from example_interfaces.msg import String
@@ -498,12 +540,35 @@ class ExampleNode(Node):
     # Create callback methods (subscribers and timers)
     def timer_callback(self):
 	    msg = String()
-	    msg.data = "Hello World" + str(counter)
+	    msg.data = "Hello World" + str(self.counter)
 	    self.example_publisher.publish(msg)
 	    self.counter = self.counter + 1
 ```
 ---
-
+## Hacer el build del nodo
+``` bash
+cd
+cd ros2_ws
+colcon build --packages-select ros2_ws --symlink-install
+cd
+source .bashrc
+```
+---
+## Correr el nodo
+``` bash
+ros2 run ros2_pkg MyFirstPublisher
+```
+Para confirmar que se haya creado el topic se puede hacer
+``` bash
+ros2 topic list
+```
+Para ver que está publicando se puede hacer echo
+``` bash
+ros2 topic echo example_topic
+```
+---
+![[topic list y topic echo.png]]
+---
 ```
 ---
 ### Interfaces
