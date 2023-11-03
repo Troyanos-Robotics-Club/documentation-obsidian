@@ -322,7 +322,9 @@ Ahora deberás ver un programa en el que automáticamente aparecen tortugas en l
 ### Funcionamiento general
 
 Esquemática general ejemplo del funcionamiento de ROS2
+
 ![[diagrama_ejemplo_ros2.png|500]]
+---
 Funcionamiento:
 1. Se crea un *Nodo* con un *Publisher*
 2. Se crea un *Nodo* con un *Subscriber*
@@ -352,21 +354,21 @@ Toda la información que fluye por el *topic* debe estar en formato de un *messa
 
 ---
 ### Topics y Messages
-![[ejemplo_mensaje.png|650]]
+![[ejemplo_mensaje.png|400]]
 Los *mensajes* son el tipo de **toda la información** que fluye en el *topic*. 
 
 Se declaran en un *package* separado y se importan. 
 
 ---
 ## ¿Cómo crear un nodo?
-### Pasos
-1. Ir al source del workspace
+
+Ir al source del workspace
 ```bash
 # Ir al src del ws
 cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
 
 ```
-2. Crear el archivo .py y configurarlo como ejecutable
+Crear el archivo .py y configurarlo como ejecutable
 ```bash
 touch node_name.py
 chmod +x node_name.py
@@ -412,7 +414,11 @@ if __name__=='__main__':
     except Exception as e:
         print(e)
 ```
+---
+## Agregar Publishers
+```python
 
+```
 ---
 ### Interfaces
 ros2 topic list
