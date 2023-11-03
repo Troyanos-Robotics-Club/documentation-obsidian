@@ -316,14 +316,7 @@ ros2 run turtle3 spawner
 ```
 
 Ahora deberás ver un programa en el que automáticamente aparecen tortugas en la interfaz y la tortuga principal persigue y atrapa a las tortugas que aparecen
-=======
-<!-- .slide: data-auto-animate -->
-# ROS 2🤖
 
----
-### ¿Qué es y para qué sirve? (esto lo hace edy)
----
-### Workspaces (lo hace garza)
 ---
 ### Funcionamiento general
 
@@ -353,7 +346,7 @@ source .bashrc
 ### Topics y Messages 
 
 ![[topics.png|900]]
-Los *Topics* son los canales por los nodos se comunican.
+Los *Topics* son los canales por los que los nodos se comunican.
 Toda la información que fluye por el *topic* debe estar en formato de un *message*.
 
 ---
@@ -389,7 +382,8 @@ colcon build --packages-select ros2_pkg --symlink-install
 %% Mencionar qué es packages-select y symlink-install Mostrar el código de ejemplo y de añadir el ejecutable desde la VM. El ejemplo de código lo va a mostrar garza%%
 
 ---
-# Template de nodo (garza)
+# Template de Nodo
+
 
 ---
 ### Interfaces
