@@ -477,9 +477,9 @@ entry_points = {
 import rclpy
 from rclpy.node import Node
 
-class ExampleNode(Node):
+class MyFirstPublisher(Node):
     def __init__(self) -> None:
-        super().__init__('example_node')
+        super().__init__('my_first_publisher')
         # Create Publishers
         # Create Subscribers
         # Initialize attributes
@@ -498,9 +498,9 @@ Para crear un timer se requiere de dos partes:
 import rclpy
 from rclpy.node import Node
 
-class ExampleNode(Node):
+class MyFirstPublisher(Node):
     def __init__(self) -> None:
-        super().__init__('example_node')
+        super().__init__('my_first_publisher')
         # Create Publishers
         # Create Subscribers
         # Initialize attributes
@@ -525,9 +525,9 @@ import rclpy
 from rclpy.node import Node
 from example_interfaces.msg import String
 
-class ExampleNode(Node):
+class MyFirstPublisher(Node):
     def __init__(self) -> None:
-        super().__init__('example_node')
+        super().__init__('my_first_publisher')
         # Create Publishers
         self.example_publisher = self.create_publisher(
 	        String,"example_topic",10)
@@ -564,12 +564,182 @@ ros2 topic list
 ```
 Para ver que está publicando se puede hacer echo
 ``` bash
-ros2 topic echo example_topic
+ros2 topic echo /example_topic
 ```
 ---
 ![[topic list y topic echo.png]]
+
 ---
+También se puede ver en rqt_graph
+``` bash
+rqt_graph
 ```
+![[rqt_graph my first publisher.png|500]]
+
+---
+## Crear ejemplo de Nodo Subscriber
+Ahora se seguirá el mismo procedimiento para crear un nodo subscriber
+```bash
+cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
+touch my_first_subscriber.py
+chmod +x my_first_subscriber.py
+```
+---
+### Copiar código de template al nuevo nodo y editar NodeName y node_name
+``` python
+import rclpy
+from rclpy.node import Node
+
+class MyFirstSubscriber(Node):
+    def __init__(self) -> None:
+        super().__init__('my_first_subscriber')
+        # Create Publishers
+        # Create Subscribers
+        # Initialize attributes
+        # Create timers
+    # Create callback methods (subscribers and timers)
+```
+---
+```python
+def main(args=None) -> None:
+    rclpy.init(args=args)
+    my_first_subscriber = MyFirstSubscriber()
+    rclpy.spin(my_first_subscriber)
+    my_first_subscriber.destroy_node()
+    rclpy.shutdown()
+if __name__=='__main__':
+    try:
+        main()
+    except Exception as e:
+        print(e)
+```
+---
+## Agregar ejecutable al setup.py
+``` python
+entry_points = {
+	'console_scripts': [
+			"MyFirstPublisher = ros2_pkg.my_first_publisher:main",
+			"MyFirstSubscriber = ros2_pkg.my_first_subscriber:main"
+		],
+}
+```
+---
+## Agregar Subscriber
+Para crear un subscriber se requiere de dos partes:
+- La variable que está escuchando al topic
+- El callback que se ejecuta cada vez que se recibe un mensaje
+---
+Asegurarse que el tipo de msg y el topic sean los mismos que los del publisher!!
+``` python
+import rclpy
+from rclpy.node import Node
+from example_interfaces.msg import String
+
+class MyFirstSubscriber(Node):
+    def __init__(self) -> None:
+        super().__init__('my_first_subscriber')
+        # Create Publishers
+        # Create Subscribers
+        self.example_subscriber = self.create_subscription(
+	        String,"example_topic",self.subscriber_callback,10)
+        # Initialize attributes
+        # Create timers
+    # Create callback methods (subscribers and timers)
+    def self.subscriber_callback(self,msg):
+	    msg_received = msg.data
+	    self.get_logger().info("Message received: " + msg_received)
+```  
+---
+## Hacer el build del nodo
+``` bash
+cd
+cd ros2_ws
+colcon build --packages-select ros2_ws --symlink-install
+cd
+source .bashrc
+```
+---
+## Correr publisher y subscriber
+Correr el publisher
+``` bash
+ros2 run ros2_pkg MyFirstPublisher
+```
+Correr el subscriber
+``` bash
+ros2 run ros2_pkg MyFirstSubscriber
+```
+---
+![[Publisher y subscriber.png]]
+---
+Para ver la interaccion entre ambos se puede ver rqt_graph
+``` bash
+rqt_graph
+```
+![[rqt_graph publisher y subscriber.png|500]]
+
+---
+## Crear publishers y subscribers en un mismo nodo
+Ahora vamos a editar un poco el subscriber para que cada vez que reciba un mensaje, publique a un topic diferente el resultado de 2*n* msgs que haya recibido
+Agregamos: 
+- Int64 de example_interfaces
+- Creamos un counter 
+- Creamos un publisher
+---
+``` python
+import rclpy
+from rclpy.node import Node
+from example_interfaces.msg import String, Int64
+
+class MyFirstSubscriber(Node):
+    def __init__(self) -> None:
+        super().__init__('my_first_subscriber')
+        # Create Publishers
+        self.publisher_2n = self.create_publisher(
+	        Int64,"multiplier_topic",10)
+        # Create Subscribers
+        self.example_subscriber = self.create_subscription(
+	        String,"example_topic",self.subscriber_callback,10)
+        # Initialize attributes
+        self.counter = 0
+        # Create timers
+    # Create callback methods (subscribers and timers)
+    def self.subscriber_callback(self,msg):
+	    msg_received = msg.data
+	    self.get_logger().info("Message received: " + msg_received)
+	    new_msg = Int64()
+	    new_msg.data = 2*self.counter
+	    self.publisher_2n.publish(new_msg)
+	    self.counter = self.counter + 1
+```  
+---
+Como al buildear usamos *--symlink-install* automaticamente se actualiza el nodo
+De nuevo corremos ambos nodos
+
+Correr el publisher
+``` bash
+ros2 run ros2_pkg MyFirstPublisher
+```
+Correr el subscriber
+``` bash
+ros2 run ros2_pkg MyFirstSubscriber
+```
+---
+Podemos hacer topic list y deben aparecer los 2 topics
+``` bash
+ros2 run topic list
+```
+Tambien podemos hacer echo al nuevo topic
+``` bash
+ros2 run topic echo /multiplier_topic
+```
+Finalmente podemos revisar rqt_graph
+Correr el publisher
+``` bash
+rqt_graph
+```
+---
+![[rqt_graph modified subscriber.png]]
+
 ---
 ### Interfaces
 ros2 topic list
