@@ -30,3 +30,19 @@ $ source .venv/bin/activate
 Con esto se activa el ambiente virtual.
 
 Para instalar dependencias, usa `pip` y `python` como normalmente lo usarías
+
+# PIP
+
+## Instalación
+
+```bash
+$ sudo apt install python3-pip
+```
+
+## Instalar paquetes
+
+```bash
+$ pip install <package_name>
+```
+
+
