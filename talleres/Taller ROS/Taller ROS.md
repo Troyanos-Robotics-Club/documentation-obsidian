@@ -14,7 +14,7 @@ clubDate: 2023-11-08
 - [x] [[Introduccion a Linux]]
 - [x] Qué es y cómo funciona [[ROS2]]
 - [x] Aplicaciones (ejemplos y carrito)
-- [ ] Workspaces
+- [x] Workspaces
 - [ ] Paquetes: definición, construcción y uso
 - [ ] Nodos y mensajes
 - [ ] Publisher/subscriber
@@ -23,7 +23,7 @@ clubDate: 2023-11-08
 - [ ] Caso práctico
 - [ ] Recursos/documentación ROS
 - [ ] Crear interfaces (interno)
-- [ ] [[ROS2#Servicios y Clientes|Servicios y clientes]]
+- [x] ~~[[ROS2#Servicios y Clientes|Servicios y clientes]]~~: No se va a hacer porque está muy grande el curso
 
 ## Logística
 
