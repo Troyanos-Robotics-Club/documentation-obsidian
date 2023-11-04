@@ -518,7 +518,7 @@ class MyFirstPublisher(Node):
 Para crear un publisher se requieren de dos partes:
 - La variable que contiene el tipo de mensaje y a que topic se va a publicar
 - El call para hacer el publish
-- También se debe agregar el tipo de mensaje que se va a utilizar
+- También se debe importar el tipo de mensaje que se va a utilizar
 	- En este caso, el mensaje es de tipo String de std_msgs.msg
 ---
 
@@ -549,7 +549,6 @@ class MyFirstPublisher(Node):
 ---
 ## Hacer el build del nodo
 ``` bash
-cd
 cd ros2_ws
 colcon build --packages-select ros2_ws --symlink-install
 cd
@@ -564,7 +563,7 @@ Para confirmar que se haya creado el topic se puede hacer
 ``` bash
 ros2 topic list
 ```
-Para ver que está publicando se puede hacer echo
+Para ver qué está publicando se puede hacer echo
 ``` bash
 ros2 topic echo /example_topic
 ```
@@ -654,7 +653,6 @@ class MyFirstSubscriber(Node):
 ---
 ## Hacer el build del nodo
 ``` bash
-cd
 cd ros2_ws
 colcon build --packages-select ros2_ws --symlink-install
 cd
@@ -683,7 +681,7 @@ rqt_graph
 ## Crear publishers y subscribers en un mismo nodo
 Ahora vamos a editar un poco el subscriber para que cada vez que reciba un mensaje, publique a un topic diferente el resultado de 2*n* msgs que haya recibido
 Agregamos: 
-- Int64 de example_interfaces
+- Int64 de std_msgs
 - Creamos un counter 
 - Creamos un publisher
 ---
@@ -714,7 +712,7 @@ class MyFirstSubscriber(Node):
 	    self.counter = self.counter + 1
 ```  
 ---
-Como al buildear usamos *--symlink-install* automaticamente se actualiza el nodo
+Como al buildear el nodo usamos *--symlink-install* automaticamente se actualiza el nodo y no ocupamos hacer build otra vez
 De nuevo corremos ambos nodos
 
 Correr el publisher
