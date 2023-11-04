@@ -212,7 +212,8 @@ note:
 2. Decir que ahora puedes usar `python normal`
 
 ---
-<<<<<<< HEAD
+# ROS2 🤖
+---
 Que es y para que sirve (Edy)
 
 ---
@@ -748,4 +749,3 @@ ros2 interface show /interface
 ros2 interface list
 
 ### Crear una interfaz
->>>>>>> villa/taller-ros
