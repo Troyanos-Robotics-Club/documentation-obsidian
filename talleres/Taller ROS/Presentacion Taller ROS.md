@@ -319,6 +319,10 @@ if __name__ == "__main__":
 
 ---
 
+![[Chmod Slides]]
+
+---
+
 <!-- .slide: data-auto-animate -->
 ### ⚡🐍Python
 
