@@ -518,12 +518,14 @@ class MyFirstPublisher(Node):
 Para crear un publisher se requieren de dos partes:
 - La variable que contiene el tipo de mensaje y a que topic se va a publicar
 - El call para hacer el publish
+- También se debe agregar el tipo de mensaje que se va a utilizar
+	- En este caso, el mensaje es de tipo String de std_msgs.msg
 ---
 
 ```python
 import rclpy
 from rclpy.node import Node
-from example_interfaces.msg import String
+from std_msgs.msg import String
 
 class MyFirstPublisher(Node):
     def __init__(self) -> None:
@@ -633,7 +635,7 @@ Asegurarse que el tipo de msg y el topic sean los mismos que los del publisher!!
 ``` python
 import rclpy
 from rclpy.node import Node
-from example_interfaces.msg import String
+from std_msgs.msg import String
 
 class MyFirstSubscriber(Node):
     def __init__(self) -> None:
@@ -688,7 +690,7 @@ Agregamos:
 ``` python
 import rclpy
 from rclpy.node import Node
-from example_interfaces.msg import String, Int64
+from std_msgs.msg import String, Int64
 
 class MyFirstSubscriber(Node):
     def __init__(self) -> None:
