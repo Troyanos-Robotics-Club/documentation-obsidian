@@ -369,6 +369,29 @@ note:
 
 Mencionar que esto sirve para que otros programas puedan usar el archivo de python
 
+---
+
+### Instalar paquetes
+
+En Python puedes usar paquetes y librerías **externas**. Para instalarlo, puedes usar `pip` (pip3)
+
+```bash
+$ sudo apt install python3-pip # instalar pip
+```
+
+```bash
+$ pip install <package_name> # instalar paquetes
+```
+
+---
+
+### Paquete necesario para Raspberry Pi
+
+El paquete `RPi.GPIO` es un paquete que se usa para poder controlar la `raspberry pi`: 
+
+```bash
+pip install RPi.GPIO
+```
 
 ---
 
