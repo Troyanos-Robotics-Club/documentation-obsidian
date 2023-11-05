@@ -49,7 +49,6 @@ ls -a homework/
 
 El comando es `ls`, con la bandera de `-a`, y el argumento de `homework/`
 
-
 # Navegación Por El FileSystem
 
 Estos comandos sirven para navegar por el FileSystem (FS):
@@ -152,3 +151,15 @@ $ git --version
 ```
 
 [Taller de Git y Github MOC](Taller%20de%20Git%20y%20Github%20MOC)
+
+# Comandos
+
+## Chmod
+
+`chmod` (Change mode) es un comando que puede cambiar el modo de un archivo. Los 3 modos que existen son: Read (r), Write (w) y Execute (x)
+
+Para agregar o quitar un modo a un archivo, puedes usar el comando y agregar (+) o quitar (-) el modo
+
+```bash
+chmod +x main.py
+```
