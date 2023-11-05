@@ -734,12 +734,14 @@ class MyFirstPublisher(Node):
 Para crear un publisher se requieren de dos partes:
 - La variable que contiene el tipo de mensaje y a que topic se va a publicar
 - El call para hacer el publish
+- También se debe importar el tipo de mensaje que se va a utilizar
+	- En este caso, el mensaje es de tipo String de std_msgs.msg
 ---
 
 ```python
 import rclpy
 from rclpy.node import Node
-from example_interfaces.msg import String
+from std_msgs.msg import String
 
 class MyFirstPublisher(Node):
     def __init__(self) -> None:
@@ -763,7 +765,6 @@ class MyFirstPublisher(Node):
 ---
 ## Hacer el build del nodo
 ``` bash
-cd
 cd ros2_ws
 colcon build --packages-select ros2_ws --symlink-install
 cd
@@ -778,7 +779,7 @@ Para confirmar que se haya creado el topic se puede hacer
 ``` bash
 ros2 topic list
 ```
-Para ver que está publicando se puede hacer echo
+Para ver qué está publicando se puede hacer echo
 ``` bash
 ros2 topic echo /example_topic
 ```
@@ -818,7 +819,7 @@ Mostrar el ejemplo practico en clase antes de mostrarlo, y luego muestras el `rq
 rqt_graph
 ```
 
-![[rqt_graph my first publisher.png|500]]
+![[my_first_publisher-example_topic.png]]
 
 ---
 ## Crear ejemplo de Nodo Subscriber
@@ -877,7 +878,7 @@ Asegurarse que el tipo de msg y el topic sean los mismos que los del publisher!!
 ``` python
 import rclpy
 from rclpy.node import Node
-from example_interfaces.msg import String
+from std_msgs.msg import String
 
 class MyFirstSubscriber(Node):
     def __init__(self) -> None:
@@ -896,7 +897,6 @@ class MyFirstSubscriber(Node):
 ---
 ## Hacer el build del nodo
 ``` bash
-cd
 cd ros2_ws
 colcon build --packages-select ros2_ws --symlink-install
 cd
@@ -925,14 +925,14 @@ rqt_graph
 ## Crear publishers y subscribers en un mismo nodo
 Ahora vamos a editar un poco el subscriber para que cada vez que reciba un mensaje, publique a un topic diferente el resultado de 2*n* msgs que haya recibido
 Agregamos: 
-- Int64 de example_interfaces
+- Int64 de std_msgs
 - Creamos un counter 
 - Creamos un publisher
 ---
 ``` python
 import rclpy
 from rclpy.node import Node
-from example_interfaces.msg import String, Int64
+from std_msgs.msg import String, Int64
 
 class MyFirstSubscriber(Node):
     def __init__(self) -> None:
@@ -956,7 +956,7 @@ class MyFirstSubscriber(Node):
 	    self.counter = self.counter + 1
 ```  
 ---
-Como al buildear usamos *--symlink-install* automaticamente se actualiza el nodo
+Como al buildear el nodo usamos *--symlink-install* automaticamente se actualiza el nodo y no ocupamos hacer build otra vez
 De nuevo corremos ambos nodos
 
 Correr el publisher
@@ -985,7 +985,140 @@ rqt_graph
 ![[rqt_graph modified subscriber.png]]
 
 ---
+Comandos ROS
+rqt_graph
+Caso práctico
+recursos/documentacion ROS
+
+---
 ### Interfaces
+Hasta ahora hemos visto algunos tipos de mensajes ya incluidos por ROS de std_msgs
+Para ver la lista completa de mensajes se puede correr el siguiente comando:
+``` bash
+ros2 interface list
+```
+Esto arroja la lista de todos las interfaces disponibles (Mensajes, Servicios y Acciones)
+
+---
+En este caso nos enfocaremos en los mensajes
+
+Si quieres ver qué contiene un tipo de mensaje, y como se debe llenar, se puede correr lo siguiente:
+``` bash
+ros2 interface show <interfaz>
+```
+
+---
+Por ejemplo, para ver la interfaz de example_interfaces/msg/String:
+``` bash
+ros2 interface show example_interfaces/msg/String
+```
+![[ros2 interface show example_interfaces_msg_string.png]]
+Aqui se puede observar que tiene solo un field llamado "data" de tipo String
+
+---
+## Crear interfaces
+Algo muy recomendado es crear tus propios mensajes
+Para esto se sigue la siguiente metodología
+
+Crear un nuevo package:
+``` bash
+cd ros2_ws/src
+ros2 pkg create my_custom_interfaces
+```
+
+Ahora vamos a configurar el package:
+```
+cd my_custom_interfaces
+rm -rf include/
+rm -rf src/
+mkdir msg
+```
+
+---
+Dentro de este nuevo package, entra al archivo *package.xml* y vamos a editarlo
+
+Debajo de:
+```
+<buildtool_depend>ament_cmake</buildtool_depend>
+```
+Agrega las siguientes 3 líneas:
+``` xml
+<build_depend>rosidl_default_generators</build_depend>
+<exec_depend>rosidl_default_runtime</exec_depend>
+<member_of_group>rosidl_interface_packages</member_of_group>
+```
+---
+Ahora entra al archivo CMakeLists.txt
+
+Borra la sección de *if(BUILD_TESTING)*
+
+Ahora en la sección de *find_dependencies* agrega las siguientes líneas:
+```
+find_package(rosidl_default_generators REQUIRED)
+rosidl_generate_interfaces(${PROJECT_NAME})
+ament_export_dependencies(rosidl_default_runtime)
+```
+Con esto el paquete ya está configurado y puedes empezar a hacer tus propios mensajes
+
+---
+
+En la terminal vamos a crear un nuevo archivo tipo *.msg* llamado *MyCustomMsg*
+``` bash
+cd ros2_ws/src/my_custom_interfaces/msg
+touch MyCustomMsg.msg
+```
+IMPORTANTE: Los nombres de los mensajes deben empezar con Mayúscula, y todas las palabras nuevas llevan mayúscula también
+
+---
+Abrimos el archivo y vamos a agregar las siguientes líneas:
+```
+string data1
+bool data2
+int64[3] data3
+```
+Ahora en el archivo de CMakeLists, edita la línea de rosidl_generate_interfaces(${PROJECT_NAME}) para que te quede así:
+```
+rosidl_generate_interfaces({PROJECT_NAME}
+	"msg/MyCustomMsg.msg"
+)
+```
+---
+Ahora hacemos el build del package
+```
+cd ros2_ws
+colcon build --packages-select my_custom_interfaces
+```
+En una terminal nueva, podemos revisar que ahora nos aparezca nuestro nuevo mensaje
+``` bash
+ros2 interface list
+```
+
+---
+También podemos revisar qué información contiene el mensaje
+``` bash
+ros2 interface show my_custom_interface/msg/MyCustomMsg
+```
+
+![[MyCustomMsg.png]]
+---
+Finalmente vamos a agregar la dependencia al paquete de 
+*ros2_pkg*
+
+Abre el *package.xml* de *ros2_pkg* y agrega la siguiente línea:
+``` xml
+<depend>my_custom_interfaces</depend>
+```
+---
+
+Ahora cuando quieras usar este mensaje, lo único que hay que hacer es importarlo al código como
+``` python
+from my_custom_interfaces.msg import MyCustomMsg
+```
+
+note: Si VScode  marca error, tenemos que agregarle un path para que pueda encontrar el archivo.
+Ve a Preferences->Settings->Python Auto Complete: Extra Paths->Edit in settings.json
+
+---
 ros2 topic list
 ros2 topic info /topic
 ros2 interface show /interface
