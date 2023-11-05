@@ -740,20 +740,6 @@ rqt_graph
 ```
 ---
 ![[rqt_graph modified subscriber.png]]
-
----
-### Interfaces
-Paquetes de ROS2 que contienen *messages*. 
-¿Cómo saber qué messages tiene cada topic?
-```bash
-ros2 topic list                    #lista de topics activo
-ros2 topic info /topic             #Información de un topic
-ros2 interface show /interface     #Información del mensaje
-ros2 interface list                #Lista de interfaces
-```
----
-### Crear una interfaz
-
 ---
 ### Ejemplo práctico
 
