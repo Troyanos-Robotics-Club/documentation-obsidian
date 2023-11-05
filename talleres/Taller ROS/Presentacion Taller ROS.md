@@ -4,7 +4,150 @@ slideNumber: true
 theme: beige
 ---
 
-# Bienvenidxs a ROS2
+# Bienvenidxs a Introducción ROS2
+
+---
+
+## ¿Qué Es ROS?
+
+**Robotic Operating System (ROS)** es un set the software y herramientas para escribir **aplicaciones** para robots
+
+[Video de introducción de ROS](https://vimeo.com/639236696)
+
+---
+### ¿Porqué Es ROS?
+
+Permite la integración entre múltiples sensores, algoritmos y comandos de una manera más amigable
+
+![Imagen de robots comunicandose](https://prod-discovery.edx-cdn.org/media/course/image/bf9f18e0-2bab-4600-ae3e-64d0743d9482-321df2b18306.small.png)
+
+Puedes levantar varios nodos que corrar de menera simultanea, sin necesdidad de configurar **multitrehading** o la comunicación
+
+---
+
+# ROS O ROS2?
+
+🤔
+
+note: 
+
+Decir que ROS es el predecesor
+
+---
+
+## Diferencia Entre ROS Y ROS2
+
+**ROS2** es el sucessor de **ROS**. Tiene más features como:
+
+- Usa python3.7 y C++11
+- Puedes grabar archivos "bag" para guardar datos del proecso
+- Tiene serguirdad integrada
+- Aplicable para aplicaciones de tiempo real
+- Maneja aplicaciones a grande escala, industriales y comerciales
+
+---
+
+### 💀ROS va a ser descontinuado
+
+---
+
+### 🦸ROS2 sigue en constante desarrollo
+
+note: 
+
+Decir que a partir de ahora, siempre que digamos "ros" nos referimos a **ros2**
+
+---
+
+<!-- .slide: data-auto-animate -->
+
+### ¿Dónde se usa ROS?
+
+- Autonomous Vehicles
+- Industrial Automation
+- Internet of Things (IoT)
+- Healthcare Robotics
+- Aerospace
+- Collaborative Robots (Cobots)
+- Research and Education
+
+note: 
+
+1. **Autonomous Vehicles:**  ROS2's real-time capabilities and improved security are critical for the development and operation of self-driving cars, drones, and underwater vehicles.
+1. **Industrial Automation:**  Robotics arms, automated guided vehicles (AGVs), and other robotic systems in manufacturing and logistics can benefit from ROS2's improved communication and control features.
+1. **Internet of Things (IoT):**  ROS2 can facilitate the integration of robots with sensors and other IoT devices in smart homes, smart cities, and smart factories due to its support for diverse communication protocols.
+1. **Healthcare Robotics:**  In surgical robots, rehabilitation devices, and hospital logistics robots, ROS2's real-time processing and enhanced security ensure safe and reliable operations.
+1. **Aerospace:**  For drones and rovers used in exploration, mapping, and surveillance, ROS2 offers robustness and the ability to handle complex communication systems.
+1. **Collaborative Robots (Cobots):**  ROS2's features support better human-robot interaction, necessary for cobots working alongside humans in shared workspaces.
+1. **Research and Education:**  Academic institutions can use ROS2 for cutting-edge research in robotics, ensuring that students and researchers are working with industry-standard tools.
+
+---
+
+<!-- .slide: data-auto-animate -->
+
+### ¿Dónde se usa ROS?
+
+- Entertainment
+- Agriculture
+- Search and Rescue Missions
+- Marine Robotics
+- Service Robots
+- Military and Defense
+- Space Exploration
+
+note: 
+
+[Ejemplos de ros](https://design.ros2.org/articles/why_ros2.html)
+
+Ejemplos de aplicaciones: 
+
+1. **Entertainment:**  Theme parks and entertainment industries can employ ROS2 to control animatronics and interactive robots for enhanced audience experiences.
+1. **Agriculture:**  For precision agriculture, ROS2 can help manage fleets of agricultural robots used for planting, monitoring crops, and harvesting.
+1. **Search and Rescue Missions:**  ROS2's reliable communication system is ideal for coordinating multiple robots in challenging environments during search and rescue operations.
+1. **Marine Robotics:**  In underwater exploration and monitoring, ROS2's support for robust, distributed systems is invaluable for managing complex tasks and data collection.
+1. **Service Robots:**  For robots that operate in service industries, like those in hospitality or retail, ROS2's enhanced interaction capabilities and security features are crucial.
+1. **Military and Defense:**  ROS2 can be used to develop and deploy robots for surveillance, bomb disposal, and logistics support in defense applications.
+1. **Space Exploration:**  Space rovers and robotic assistants for astronauts can be developed using ROS2, taking advantage of its robustness and advanced communication capabilities.
+
+---
+
+
+
+<grid drag="100 50" drop="bottom">
+![[carrito-robotico2.jpeg|485]]
+%% Carro horizontal %%
+</grid>
+
+<grid drag="70 50" drop="topleft">
+![[carrito-robotico1.jpeg|200]]
+%% Carro vertical %%
+</grid>
+
+<grid drag="70 50" drop="topright">
+![[carrito-robotico-3.jpeg|200]]
+%% Carro vertical 2 %%
+</grid>
+
+<grid drag="35 100" drop="left" rotate="270">
+**Ejemplo: Control del carrito**
+%% Carro vertical 2 %%
+</grid>
+
+note:
+
+Aqui es la demostración del carrito
+
+---
+
+![[P2 Reference Coordinates.png]]
+
+note: 
+
+Mostrar como funciona
+
+---
+
+### 🤖¿Listos para aprender?
 
 
 ---
@@ -125,7 +268,6 @@ Si los usuarios no están usando bash, comentar que puede ser `.zhrc` o algo par
 <!-- .slide: data-auto-animate -->
 ### ⚡⚙Agregar Configuraciones
 
-
 Puedes agregar más configuraciones en *la sessión* usando el comando de `source`
 
 ```sh
@@ -135,7 +277,6 @@ $ source ~/.config.sh
 $ source ~/.install.sh
 
 ```
-
 
 ---
 
@@ -162,7 +303,7 @@ Puedes usar **Python** desde la terminal:
 
 ![[Introduccion a Linux#^dd2dba]]
 
-note: 
+note:
 
 Hacer un ejemplo de un `hello world`
 
@@ -181,6 +322,82 @@ if __name__ == "__main__":
 <!-- .slide: data-auto-animate -->
 ### ⚡🐍Python
 
+Ocasionalmente, puedes necesitar que el archivo de *python* sea un *ejecutable*. Para esto se necesitan 2 condiciones:
+
+1. Cambiar el modo del archivo a ejecutable
+2. Agregar `#!/usr/bin/env python3` al principio del archivo
+
+---
+
+Ejemplo con archivo `hello-world.py`
+
+```python
+print("hello world")
+```
+
+```bash
+$ python3 hello-world.py # outputs "hello world"
+```
+
+note: 
+
+Mencionar que así se corren los archivos normalmente
+
+---
+
+Agregas la linea para que la terminal pueda saber como correr el archivo de python
+
+```python
+#!/usr/bin/env python3
+
+print("hello world")
+```
+
+Cambias el modo con el comando `chmod`
+
+```bash
+$ chmod +x hello-world.py
+```
+
+Ahora se puede llamar así
+
+```bash
+$ ./hello-world.py # outputs "hello world"
+```
+
+note: 
+
+Mencionar que esto sirve para que otros programas puedan usar el archivo de python
+
+---
+
+### Instalar paquetes
+
+En Python puedes usar paquetes y librerías **externas**. Para instalarlo, puedes usar `pip` (pip3)
+
+```bash
+$ sudo apt install python3-pip # instalar pip
+```
+
+```bash
+$ pip install <package_name> # instalar paquetes
+```
+
+---
+
+### Paquete necesario para Raspberry Pi
+
+El paquete `RPi.GPIO` es un paquete que se usa para poder controlar la `raspberry pi`: 
+
+```bash
+pip install RPi.GPIO
+```
+
+---
+
+<!-- .slide: data-auto-animate -->
+### ⚡🐍Python
+
 También puedes crear **ambientes virtuales** en python:
 
 ![[Python#^0152ce]]
@@ -189,7 +406,7 @@ Se crea una carpeta `.venv` con las dependencias de python
 
 %% No se si se tiene que mostrar esto! %%
 
-note: 
+note:
 
 Hacer los comandos que vienen en la presentacion
 
@@ -206,15 +423,11 @@ Con esto, nuestro `python` cambia a usar el de la carpeta `.venv`
 
 %% No se si se tiene que mostrar esto! %%
 
-note: 
+note:
 
 1. Activa el ambiente virual
 2. Decir que ahora puedes usar `python normal`
 
----
-# ROS2 🤖
----
-Que es y para que sirve (Edy)
 
 ---
 <!-- .slide: data-auto-animate -->
@@ -319,6 +532,8 @@ ros2 run turtle3 movement
 ``` bash
 ros2 run turtle3 spawner
 ```
+
+Ahora deberás ver un programa en el que automáticamente aparecen tortugas en la interfaz y la tortuga principal persigue y atrapa a las tortugas que aparecen
 
 ---
 
@@ -519,12 +734,14 @@ class MyFirstPublisher(Node):
 Para crear un publisher se requieren de dos partes:
 - La variable que contiene el tipo de mensaje y a que topic se va a publicar
 - El call para hacer el publish
+- También se debe importar el tipo de mensaje que se va a utilizar
+	- En este caso, el mensaje es de tipo String de std_msgs.msg
 ---
 
 ```python
 import rclpy
 from rclpy.node import Node
-from example_interfaces.msg import String
+from std_msgs.msg import String
 
 class MyFirstPublisher(Node):
     def __init__(self) -> None:
@@ -548,7 +765,6 @@ class MyFirstPublisher(Node):
 ---
 ## Hacer el build del nodo
 ``` bash
-cd
 cd ros2_ws
 colcon build --packages-select ros2_ws --symlink-install
 cd
@@ -563,7 +779,7 @@ Para confirmar que se haya creado el topic se puede hacer
 ``` bash
 ros2 topic list
 ```
-Para ver que está publicando se puede hacer echo
+Para ver qué está publicando se puede hacer echo
 ``` bash
 ros2 topic echo /example_topic
 ```
@@ -571,11 +787,39 @@ ros2 topic echo /example_topic
 ![[topic list y topic echo.png]]
 
 ---
-También se puede ver en rqt_graph
+
+### 😵Mucha terminal
+
+
+A veces muchos nodos están interactuando, y se vuelve complicado ver como se relacionan
+
+note: 
+
+Mencionar que puede que tengas muchos topics y quieres verlos de manera gráfica
+
+---
+
+## RQT Graph
+
+`rqt_graph` es un comando que despliega la gráfica de los nodos corriendo. 
+
+```sh
+rqt_graph
+```
+
+![[rqt_graph-gui.png|600]]
+
+note: 
+
+Mostrar el ejemplo practico en clase antes de mostrarlo, y luego muestras el `rqt_graph`
+
+---
+
 ``` bash
 rqt_graph
 ```
-![[rqt_graph my first publisher.png|500]]
+
+![[my_first_publisher-example_topic.png]]
 
 ---
 ## Crear ejemplo de Nodo Subscriber
@@ -634,7 +878,7 @@ Asegurarse que el tipo de msg y el topic sean los mismos que los del publisher!!
 ``` python
 import rclpy
 from rclpy.node import Node
-from example_interfaces.msg import String
+from std_msgs.msg import String
 
 class MyFirstSubscriber(Node):
     def __init__(self) -> None:
@@ -653,7 +897,6 @@ class MyFirstSubscriber(Node):
 ---
 ## Hacer el build del nodo
 ``` bash
-cd
 cd ros2_ws
 colcon build --packages-select ros2_ws --symlink-install
 cd
@@ -682,14 +925,14 @@ rqt_graph
 ## Crear publishers y subscribers en un mismo nodo
 Ahora vamos a editar un poco el subscriber para que cada vez que reciba un mensaje, publique a un topic diferente el resultado de 2*n* msgs que haya recibido
 Agregamos: 
-- Int64 de example_interfaces
+- Int64 de std_msgs
 - Creamos un counter 
 - Creamos un publisher
 ---
 ``` python
 import rclpy
 from rclpy.node import Node
-from example_interfaces.msg import String, Int64
+from std_msgs.msg import String, Int64
 
 class MyFirstSubscriber(Node):
     def __init__(self) -> None:
@@ -713,7 +956,7 @@ class MyFirstSubscriber(Node):
 	    self.counter = self.counter + 1
 ```  
 ---
-Como al buildear usamos *--symlink-install* automaticamente se actualiza el nodo
+Como al buildear el nodo usamos *--symlink-install* automaticamente se actualiza el nodo y no ocupamos hacer build otra vez
 De nuevo corremos ambos nodos
 
 Correr el publisher
@@ -741,6 +984,144 @@ rqt_graph
 ---
 ![[rqt_graph modified subscriber.png]]
 ---
-### Ejemplo práctico
 
-![[ejemplo_taller.png|500]]
+Comandos ROS
+rqt_graph
+Caso práctico
+recursos/documentacion ROS
+
+---
+### Interfaces
+Hasta ahora hemos visto algunos tipos de mensajes ya incluidos por ROS de std_msgs
+Para ver la lista completa de mensajes se puede correr el siguiente comando:
+``` bash
+ros2 interface list
+```
+Esto arroja la lista de todos las interfaces disponibles (Mensajes, Servicios y Acciones)
+
+---
+En este caso nos enfocaremos en los mensajes
+
+Si quieres ver qué contiene un tipo de mensaje, y como se debe llenar, se puede correr lo siguiente:
+``` bash
+ros2 interface show <interfaz>
+```
+
+---
+Por ejemplo, para ver la interfaz de example_interfaces/msg/String:
+``` bash
+ros2 interface show example_interfaces/msg/String
+```
+![[ros2 interface show example_interfaces_msg_string.png]]
+Aqui se puede observar que tiene solo un field llamado "data" de tipo String
+
+---
+## Crear interfaces
+Algo muy recomendado es crear tus propios mensajes
+Para esto se sigue la siguiente metodología
+
+Crear un nuevo package:
+``` bash
+cd ros2_ws/src
+ros2 pkg create my_custom_interfaces
+```
+
+Ahora vamos a configurar el package:
+```
+cd my_custom_interfaces
+rm -rf include/
+rm -rf src/
+mkdir msg
+```
+
+---
+Dentro de este nuevo package, entra al archivo *package.xml* y vamos a editarlo
+
+Debajo de:
+```
+<buildtool_depend>ament_cmake</buildtool_depend>
+```
+Agrega las siguientes 3 líneas:
+``` xml
+<build_depend>rosidl_default_generators</build_depend>
+<exec_depend>rosidl_default_runtime</exec_depend>
+<member_of_group>rosidl_interface_packages</member_of_group>
+```
+---
+Ahora entra al archivo CMakeLists.txt
+
+Borra la sección de *if(BUILD_TESTING)*
+
+Ahora en la sección de *find_dependencies* agrega las siguientes líneas:
+```
+find_package(rosidl_default_generators REQUIRED)
+rosidl_generate_interfaces(${PROJECT_NAME})
+ament_export_dependencies(rosidl_default_runtime)
+```
+Con esto el paquete ya está configurado y puedes empezar a hacer tus propios mensajes
+
+---
+
+En la terminal vamos a crear un nuevo archivo tipo *.msg* llamado *MyCustomMsg*
+``` bash
+cd ros2_ws/src/my_custom_interfaces/msg
+touch MyCustomMsg.msg
+```
+IMPORTANTE: Los nombres de los mensajes deben empezar con Mayúscula, y todas las palabras nuevas llevan mayúscula también
+
+---
+Abrimos el archivo y vamos a agregar las siguientes líneas:
+```
+string data1
+bool data2
+int64[3] data3
+```
+Ahora en el archivo de CMakeLists, edita la línea de rosidl_generate_interfaces(${PROJECT_NAME}) para que te quede así:
+```
+rosidl_generate_interfaces({PROJECT_NAME}
+	"msg/MyCustomMsg.msg"
+)
+```
+---
+Ahora hacemos el build del package
+```
+cd ros2_ws
+colcon build --packages-select my_custom_interfaces
+```
+En una terminal nueva, podemos revisar que ahora nos aparezca nuestro nuevo mensaje
+``` bash
+ros2 interface list
+```
+
+---
+También podemos revisar qué información contiene el mensaje
+``` bash
+ros2 interface show my_custom_interface/msg/MyCustomMsg
+```
+
+![[MyCustomMsg.png]]
+---
+Finalmente vamos a agregar la dependencia al paquete de 
+*ros2_pkg*
+
+Abre el *package.xml* de *ros2_pkg* y agrega la siguiente línea:
+``` xml
+<depend>my_custom_interfaces</depend>
+```
+---
+
+Ahora cuando quieras usar este mensaje, lo único que hay que hacer es importarlo al código como
+``` python
+from my_custom_interfaces.msg import MyCustomMsg
+```
+
+note: Si VScode  marca error, tenemos que agregarle un path para que pueda encontrar el archivo.
+Ve a Preferences->Settings->Python Auto Complete: Extra Paths->Edit in settings.json
+
+---
+ros2 topic list
+ros2 topic info /topic
+ros2 interface show /interface
+ros2 interface list
+
+### Crear una interfaz
