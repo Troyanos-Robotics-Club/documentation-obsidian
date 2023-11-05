@@ -211,7 +211,9 @@ source /opt/ros/humble/setup.bash && echo "source /opt/ros/humble/setup.bash" >>
 ### Python Dependecies
 
 - Python dependencies
-- `pip install --user -U empy pyros-genmsg setuptools`
+``` bash
+pip install --user -U empy pyros-genmsg setuptools
+```
 
 - Install ROS2 build tool - colcon
 
