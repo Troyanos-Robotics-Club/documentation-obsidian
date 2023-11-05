@@ -1,4 +1,3 @@
-# Virtual Machine ROS2 Setup
 
 The newest currently supported ROS2 LTS distribution is Humble, which runs on Ubuntu 22.04. This distribution won’t reach EOL (end of life) until May 2027. The different ROS distributions can be found here: <https://docs.ros.org/en/rolling/Releases.html>
 
@@ -53,13 +52,6 @@ Go to *Storage,* then click on *Empty,* then on the blue disk that appears to th
 
 Click *OK* and then *Start.* Anytime you want to change the configuration of the VM you can go to *Settings* and update it (Change RAM, Processors, etc.)
 
-> [!tip] Fullscreen mode
-> If you have a single screen, it is easiest to work in the VM without the VirtualBox full-screen mode. To adjust the screen size, right click in the Ubuntu VM and select “Display Settings”. Here you can adjust the screen size. A recommended view of how it can look is the following:
-
-![[Pasted image 20231101103930.png]]
-
-![[Pasted image 20231101103935.png]]
-
 ### Ubuntu Setup
 
 When you have installed ubuntu, you can open the virtual machine and start with the installation process
@@ -68,6 +60,10 @@ When you have installed ubuntu, you can open the virtual machine and start with 
   - Select *Try or Install Ubuntu*
 
 ![[Pasted image 20231101103941.png]]
+
+> [!tip]
+> If the screen doesn't show the "Next", "Continue" or "Install" buttons, you can drag the Installation window right or left to show the buttons. 
+
 
 Select *Install Ubuntu*
 
@@ -105,6 +101,13 @@ Wait while everything is installed
 1. You can choose to send system info or not, then click *Next*
 1. Choose whether or not to use Location Services and then click *Next*
 
+
+
+> [!tip] Fullscreen mode
+> If you have a single screen, it is easiest to work in the VM without the VirtualBox full-screen mode. To adjust the screen size, right click in the Ubuntu VM and select “Display Settings”. Here you can adjust the screen size. A recommended view of how it can look is the following:
+
+![[Pasted image 20231101103930.png]]
+![[Pasted image 20231101103935.png]]
 # Tools and Software
 
 You will need software use **ros2**:
@@ -179,7 +182,10 @@ sudo apt install git
 
 - ROS2
    - ROS2 installation (Steps taken from the official guide on <https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html>):
-      - Verify you have UTF-8
+   
+> [!tip]
+> It is easiest if you open the link of the official guide in FireFox from your Virtual Machine. That way you can copy all the commands shown straight from the page
+      
 
 ```bash
 locale
@@ -192,13 +198,6 @@ sudo apt install software-properties-common
 sudo add-apt-repository universe
 sudo apt update && sudo apt install curl -y
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg 
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU\_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-
-
-sudo apt install software-properties-common
-sudo add-apt-repository universe
-sudo apt update && sudo apt install curl -y
-sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU\_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 
 sudo apt update
@@ -219,8 +218,5 @@ source /opt/ros/humble/setup.bash && echo "source /opt/ros/humble/setup.bash" >>
 ```bash
 sudo apt install python3-colcon-common-extensions
 cd
-source /usr/share/colcon\_argcomplete/hook/colcon-argcomplete.bash && echo "source /usr/share/colcon\_argcomplete/hook/colcon-argcomplete.bash" >> .bashrc
-sudo apt install python3-colcon-common-extensions
-cd
-source /usr/share/colcon\_argcomplete/hook/colcon-argcomplete.bash && echo "source /usr/share/colcon\_argcomplete/hook/colcon-argcomplete.bash" >> .bashrc
+source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash && echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> .bashrc
 ```
