@@ -467,9 +467,8 @@ Mientras estas en la terminal de teleopkey, puedes controlar la tortuga de la in
 Ahora para ver un ejemplo de lo que se puede llegar a hacer con esta simple aplicación, corre el siguiente comando
 
 ``` bash
-cd
 cd ~/ros2_ws/src/
-git clone https://github.com/davidogarzas/taller_ros.git
+git clone https://github.com/davidogarzas/taller_ros2.git
 cd ..
 colcon build
 source ~/ros2_ws/install/setup.bash
