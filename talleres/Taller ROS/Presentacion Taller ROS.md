@@ -63,13 +63,33 @@ Decir que a partir de ahora, siempre que digamos "ros" nos referimos a **ros2**
 
 ### ¿Dónde se usa ROS?
 
+<split even gap="0">
+
+::: block
+
 - Vehículos autónomos
 - Automatización industrial
-- Internet de las cosas (IoT, por sus siglas en inglés)
+- IoT
 - Robótica en el ámbito de la salud
 - Aeroespacial
 - Robots colaborativos (Cobots)
 - Investigación y educación
+
+:::
+
+::: block
+
+- Entretenimiento
+- Agricultura
+- Misiones de búsqueda y rescate
+- Robótica marina
+- Robots de servicio
+- Militar y defensa
+- Exploración espacial
+
+:::
+
+</split>
 
 note: 
 
@@ -80,27 +100,6 @@ note:
 1. **Aerospace:**  For drones and rovers used in exploration, mapping, and surveillance, ROS2 offers robustness and the ability to handle complex communication systems.
 1. **Collaborative Robots (Cobots):**  ROS2's features support better human-robot interaction, necessary for cobots working alongside humans in shared workspaces.
 1. **Research and Education:**  Academic institutions can use ROS2 for cutting-edge research in robotics, ensuring that students and researchers are working with industry-standard tools.
-
----
-
-<!-- .slide: data-auto-animate -->
-
-### ¿Dónde se usa ROS?
-
-- Entretenimiento
-- Agricultura
-- Misiones de búsqueda y rescate
-- Robótica marina
-- Robots de servicio
-- Militar y defensa
-- Exploración espacial
-
-note: 
-
-[Ejemplos de ros](https://design.ros2.org/articles/why_ros2.html)
-
-Ejemplos de aplicaciones: 
-
 1. **Entertainment:**  Theme parks and entertainment industries can employ ROS2 to control animatronics and interactive robots for enhanced audience experiences.
 1. **Agriculture:**  For precision agriculture, ROS2 can help manage fleets of agricultural robots used for planting, monitoring crops, and harvesting.
 1. **Search and Rescue Missions:**  ROS2's reliable communication system is ideal for coordinating multiple robots in challenging environments during search and rescue operations.
@@ -108,6 +107,8 @@ Ejemplos de aplicaciones:
 1. **Service Robots:**  For robots that operate in service industries, like those in hospitality or retail, ROS2's enhanced interaction capabilities and security features are crucial.
 1. **Military and Defense:**  ROS2 can be used to develop and deploy robots for surveillance, bomb disposal, and logistics support in defense applications.
 1. **Space Exploration:**  Space rovers and robotic assistants for astronauts can be developed using ROS2, taking advantage of its robustness and advanced communication capabilities.
+
+[Ejemplos de ros](https://design.ros2.org/articles/why_ros2.html)
 
 ---
 
