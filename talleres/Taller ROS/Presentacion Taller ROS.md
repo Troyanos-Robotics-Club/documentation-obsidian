@@ -315,6 +315,14 @@ Puedes usar **Python** desde la terminal:
 
 ![[Introduccion a Linux#^a117d1]]
 
+```python
+def main():
+  print("hello world!!")
+
+if __name__ == "__main__":
+  main()
+```
+
 ![[Introduccion a Linux#^dd2dba]]
 
 note:
