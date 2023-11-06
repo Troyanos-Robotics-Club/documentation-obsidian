@@ -425,9 +425,13 @@ Con esto, nuestro `python` cambia a usar el de la carpeta `.venv`
 
 note:
 
-1. Activa el ambiente virual
+1. Activa el ambiente virtual
 2. Decir que ahora puedes usar `python normal`
 
+---
+### Estructura general de ROS2
+
+![[Estructura_general_ROS.excalidraw.png|500]]
 
 ---
 <!-- .slide: data-auto-animate -->
@@ -483,7 +487,7 @@ sudo apt install ros-humble-turtlesim
 Ahora, asegúrate de tener todas las terminales sourceadas con
 
 ``` bash
-source .bashrc
+source ~/.bashrc
 ```
 
 ---
@@ -564,7 +568,7 @@ cd ..
 colcon build --packages-select ros2_pkg
 
 # Configuración para que ROS2 detecte el paquete
-source .bashrc
+source ~/.bashrc
 ```
 ---
 ### Topics y Messages 
@@ -592,11 +596,18 @@ cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
 Crear el archivo .py y configurarlo como ejecutable
 ```bash
 touch node_name.py
-chmod +x node_name.py
 cd ..
 ```
 ---
 3. Añadir el ejecutable a ROS2 en *setup.py*
+``` python
+entry_points = {
+	'console_scripts': [
+			"node_name = ros2_pkg.node_name:main"
+		],
+}
+```
+
 4. Editar el nodo: Tomar como base la template
 5. Regresar al directorio del workspace y hacer *colcon build*
 ```bash
@@ -647,7 +658,6 @@ Primero se crea un nuevo nodo llamado my_first_publisher.py
 ```bash
 cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
 touch my_first_publisher.py
-chmod +x my_first_publisher.py
 ```
 ---
 ### Copiar código de template al nuevo nodo y editar NodeName y node_name
@@ -688,7 +698,7 @@ entry_points = {
 }
 ```
 ---
-## Agregar atributos (variables)
+## Agregar atributos 
 ``` python
 import rclpy
 from rclpy.node import Node
@@ -705,9 +715,8 @@ class MyFirstPublisher(Node):
 ```
 ---
 ## Agregar Timers
-Para crear un timer se requiere de dos partes:
-- La variable que mantiene cuenta del tiempo
-- El callback que se ejecuta cada vez que se alcanza el tiempo establecido
+- Definir el periodo del Tic-Tac
+- La función *callback* que ejecuta en cada periodo
 ---
 
 ```python
@@ -731,11 +740,10 @@ class MyFirstPublisher(Node):
 ---
 
 ## Agregar Publishers
-Para crear un publisher se requieren de dos partes:
-- La variable que contiene el tipo de mensaje y a que topic se va a publicar
-- El call para hacer el publish
-- También se debe importar el tipo de mensaje que se va a utilizar
-	- En este caso, el mensaje es de tipo String de std_msgs.msg
+- Definir la clase del message: tipo de message
+	- Importar la interfaz: String de std_msgs.msg
+- El *topic* al cual se publica.
+	
 ---
 
 ```python
@@ -766,9 +774,8 @@ class MyFirstPublisher(Node):
 ## Hacer el build del nodo
 ``` bash
 cd ros2_ws
-colcon build --packages-select ros2_ws --symlink-install
-cd
-source .bashrc
+colcon build --packages-select ros2_pkg --symlink-install
+source ~/.bashrc
 ```
 ---
 ## Correr el nodo
@@ -827,7 +834,6 @@ Ahora se seguirá el mismo procedimiento para crear un nodo subscriber
 ```bash
 cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
 touch my_first_subscriber.py
-chmod +x my_first_subscriber.py
 ```
 ---
 ### Copiar código de template al nuevo nodo y editar NodeName y node_name
@@ -898,9 +904,8 @@ class MyFirstSubscriber(Node):
 ## Hacer el build del nodo
 ``` bash
 cd ros2_ws
-colcon build --packages-select ros2_ws --symlink-install
-cd
-source .bashrc
+colcon build --packages-select ros2_pkg --symlink-install
+source ~/.bashrc
 ```
 ---
 ## Correr publisher y subscriber
@@ -913,8 +918,6 @@ Correr el subscriber
 ros2 run ros2_pkg MyFirstSubscriber
 ```
 ---
-![[Publisher y subscriber.png]]
----
 Para ver la interaccion entre ambos se puede ver rqt_graph
 ``` bash
 rqt_graph
@@ -923,7 +926,8 @@ rqt_graph
 
 ---
 ## Crear publishers y subscribers en un mismo nodo
-Ahora vamos a editar un poco el subscriber para que cada vez que reciba un mensaje, publique a un topic diferente el resultado de 2*n* msgs que haya recibido
+Objetivo: Lograr que el subscriber publique el resultado de 2\*n de cada mensaje que reciba en otro topic.
+
 Agregamos: 
 - Int64 de std_msgs
 - Creamos un counter 
@@ -956,7 +960,7 @@ class MyFirstSubscriber(Node):
 	    self.counter = self.counter + 1
 ```  
 ---
-Como al buildear el nodo usamos *--symlink-install* automaticamente se actualiza el nodo y no ocupamos hacer build otra vez
+No es necesario hacer *colcon build*, se modificó el nodo.
 De nuevo corremos ambos nodos
 
 Correr el publisher
@@ -983,26 +987,19 @@ rqt_graph
 ```
 ---
 ![[rqt_graph modified subscriber.png]]
----
-
-Comandos ROS
-rqt_graph
-Caso práctico
-recursos/documentacion ROS
 
 ---
 ### Interfaces
-Hasta ahora hemos visto algunos tipos de mensajes ya incluidos por ROS de std_msgs
-Para ver la lista completa de mensajes se puede correr el siguiente comando:
+Hasta ahora hemos visto algunos tipos de mensajes ya incluidos por ROS de std_msgs.
+
+Podemos ver todos los mensajes que existe:
 ``` bash
 ros2 interface list
 ```
-Esto arroja la lista de todos las interfaces disponibles (Mensajes, Servicios y Acciones)
 
 ---
-En este caso nos enfocaremos en los mensajes
 
-Si quieres ver qué contiene un tipo de mensaje, y como se debe llenar, se puede correr lo siguiente:
+Para ver qué contiene un tipo de mensaje se usa el siguiente comando:
 ``` bash
 ros2 interface show <interfaz>
 ```
@@ -1013,7 +1010,7 @@ Por ejemplo, para ver la interfaz de example_interfaces/msg/String:
 ros2 interface show example_interfaces/msg/String
 ```
 ![[ros2 interface show example_interfaces_msg_string.png]]
-Aqui se puede observar que tiene solo un field llamado "data" de tipo String
+Aqui se puede observar que tiene solo un field llamado "data" de tipo String en el mensaje String.
 
 ---
 ## Crear interfaces
@@ -1119,9 +1116,163 @@ note: Si VScode  marca error, tenemos que agregarle un path para que pueda encon
 Ve a Preferences->Settings->Python Auto Complete: Extra Paths->Edit in settings.json
 
 ---
-ros2 topic list
-ros2 topic info /topic
-ros2 interface show /interface
-ros2 interface list
+## Recap🔙
+Pasos para crear un nodo:
+1. Crear un archivo .py y agregar lo necesario
+	1. Publishers
+	2. Subscibers
+	3. Timers
+	4. Callbacks
+	5. Atributos
+2. Agregarlo a setup.py
+3. Hacer el build en el *directorio del workspace*
+4. Hacer el source del proyecto 
+```sh 
+source ~/.bashrc 
+```
+5. Correr el nodo
+```sh
+ros2 run <package> <nodo>
+```
+---
+<!-- .slide: data-auto-animate -->
+## ¿Dudas?🤔
+---
+<!-- .slide: data-auto-animate -->
+## Ahora siguen ustedes!😎
+---
+<!-- .slide: data-auto-animate -->
+## Ahora siguen ustedes!😎
+### Problema a resolver
+Se tiene un *Nodo* corriendo en una Raspberri Pi que está leyendo constantemente el valor de un sensor ultrasónico y el estado de un pulsador. Esta información la publica en topics diferentes.
+A su vez, recibe información de otros dos topics para encender un LED y abrir/cerrar una puerta. 
+El objetivo del proyecto es lograr:
+1. Cuando se pulse el botón la puerta se abra y se cierra automáticamente
+2. Cuando haya algún objeto a menos de 10 cm del sensor, el LED se encienda
+---
+### Diagrama de nodos esperado 
 
-### Crear una interfaz
+```mermaid
+graph TD
+	subgraph CustomSize [1500px,1400px]
+		RPI([NodoRPI]) --> B[" /estado boton"]
+		B --> C([Nodo1]) --> pwm["/pwm_servo"]
+		pwm --> RPI
+		RPI --> dist["/distancia_sensor"]
+		dist --> D([Nodo2])
+		D --> L["/estado_led"] --> RPI
+	end
+```
+---
+
+![[ejemplo_taller.png]]
+---
+### Nodo RPi
+- **/estado_led**: de tipo Bool. Enciende o apaga el LED. 
+- **/pwm_servo**: de tipo String:
+	- "ABRIR" - Abre la puerta
+	- "CERRAR" - Cierra la puerta
+	- "ABRIR MUCHO" - Abre completamente la puerta
+- **/distancia_sensor**: de tipo Float32, manda constantemente el valor *leído del sensor* en cm.
+- **/estado_boton**: de tipo Bool, manda un True cuando el botón pasa de *no-presionado a presionado.*
+
+Los mensajes se obtuvieron de [std_msgs](https://docs.ros2.org/foxy/api/std_msgs/index-msg.html)
+
+---
+<div style="display: flex; flex-direction: row;">
+<div style="flex: 1; font-size: 30x;">
+Nodo 1
+
+Objetivo: Abrir y cerrar la puerta cada vez que se presione el boton
+1. Crear subscriber a /estado_boton 
+2. Crear publisher a /pwm_servo 
+3. Procesar la información
+4. Publicar en /pwm_servo
+</div> 
+<div style="flex: 1; font-size: 30x;">
+Nodo 2
+
+Objetivo: Encender el LED si hay algo cerca del sensor
+1. Crear subscriber a /distancia_sensor
+2. Crear subscriber a /estado_LED
+3. Procesar la información
+4. Publicar en /estado_LED
+
+</div> 
+</div>
+
+---
+<!-- .slide: data-auto-animate -->
+### Solución Nodo 1
+
+---
+<!-- .slide: data-auto-animate -->
+### Solución Nodo 1
+```python
+# Abre y cierra la puerta cada vez que se oprime el boton
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import Float32, Bool, String
+import time
+
+class Nodo1(Node):
+    def __init__(self) -> None:
+        super().__init__('Nodo1')
+
+        # Create Publishers
+        self.publisher_servo = self.create_publisher(String,"/pwm_servo",10)
+
+        # Create Subscribers
+        self.subscriber_boton = self.create_subscription(Bool,"/estado_boton",self.callback_boton,1)
+
+        # Inicializar servo
+        inicio = String()
+        inicio.data = "CERRAR"
+        self.publisher_servo.publish(inicio)
+
+    def callback_boton(self,msg):
+        msg_servo = String()
+        if (msg.data): # verificar presion de boton
+            msg_servo.data = "ABRIR"
+            self.publisher_servo.publish(msg_servo)
+            time.sleep(2)
+            msg_servo.data = "CERRAR"
+            self.publisher_servo.publish(msg_servo)
+```
+%%Mostrar codigo desde la VM %%
+
+---
+<!-- .slide: data-auto-animate -->
+## Solución Nodo 2
+---
+<!-- .slide: data-auto-animate --> 
+## Solución Nodo 2
+```python
+# Prende el LED si hay alguien cerca
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import Bool, Float32
+import time
+
+class Nodo2(Node):
+    def __init__(self) -> None:
+        super().__init__('Nodo2')
+
+        # Create Publishers
+        self.publisher_LED = self.create_publisher(Bool,"estado_LED",10)
+
+        # Create Subscribers
+        self.subscriber_proximidad = self.create_subscription(Float32,"/distancia_sensor",self.callback_distancia,10)
+
+    # Create callback methods (subscribers and timers)
+    def callback_distancia(self,msg):
+        distancia = msg.data
+        msg_LED = Bool()
+        if (distancia < 10.0):
+            msg_LED.data = True
+        else: msg_LED.data = False
+        self.publisher_LED.publish(msg_LED)
+```
+%%Mostrar codigo desde la VM %%
+
+---
