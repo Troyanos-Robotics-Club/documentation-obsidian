@@ -268,13 +268,11 @@ Si los usuarios no están usando bash, comentar que puede ser `.zhrc` o algo par
 <!-- .slide: data-auto-animate -->
 ### ⚡⚙Agregar Configuraciones
 
-Puedes agregar más configuraciones en *la sessión* usando el comando de `source`
+Puedes agregar más configuraciones en *la sesión* usando el comando de `source`. También sirve para "reiniciar" las configuraciones
 
 ```sh
 # Init terminal
 $ source ~/.bashrc
-$ source ~/.config.sh
-$ source ~/.install.sh
 
 ```
 
@@ -283,9 +281,25 @@ $ source ~/.install.sh
 <!-- .slide: data-auto-animate -->
 ### ⚡⚙Agregar Configuraciones
 
-![[Introduccion a Linux#^2d5420]] <!-- element style="width:130%; height:auto;" -->
+```mermaid <!-- element style="width:130%; height:auto;" -->
+flowchart LR
+subgraph init
+    startInit[Open Terminal] --> A["source ~/.bashrc"] 
+end
 
-Esto nos servirá para configurar `ros` cuando estemos usando la terminal
+subgraph session
+start[Start session] --> W
+W[Work on ROS Project] --> build
+build[Build project] -->  C["source ~/.bashrc"]
+C --> W
+end
+
+init --> session
+
+```
+
+
+El proceso de trabajar con `ROS` involucra reiniciar las configuraciones cada vez que se haga un **build**
 
 ---
 
