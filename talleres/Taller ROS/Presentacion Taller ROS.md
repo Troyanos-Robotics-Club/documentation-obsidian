@@ -4,7 +4,7 @@ slideNumber: true
 theme: beige
 ---
 
-# Bienvenidxs a Introducción ROS2
+# 🤖Bienvenidxs a Introducción ROS2
 
 ---
 
@@ -15,13 +15,13 @@ theme: beige
 [Video de introducción de ROS](https://vimeo.com/639236696)
 
 ---
-### ¿Porqué Es ROS?
+### ¿Por qué ROS?
 
-Permite la integración entre múltiples sensores, algoritmos y comandos de una manera más amigable
+Permite la integración entre múltiples sensores, algoritmos y commandos fácilmente
 
-![Imagen de robots comunicandose](https://prod-discovery.edx-cdn.org/media/course/image/bf9f18e0-2bab-4600-ae3e-64d0743d9482-321df2b18306.small.png)
+![Imagen de robots comunicándose](https://prod-discovery.edx-cdn.org/media/course/image/bf9f18e0-2bab-4600-ae3e-64d0743d9482-321df2b18306.small.png)
 
-Puedes levantar varios nodos que corrar de menera simultanea, sin necesdidad de configurar **multitrehading** o la comunicación
+Puedes levantar varios nodos se ejecuten de manera simultanea, sin necesidad de configurar **multithreading** o la comunicación
 
 ---
 
@@ -37,11 +37,11 @@ Decir que ROS es el predecesor
 
 ## Diferencia Entre ROS Y ROS2
 
-**ROS2** es el sucessor de **ROS**. Tiene más features como:
+**ROS2** es el sucesor de **ROS**. Tiene más features como:
 
 - Usa python3.7 y C++11
-- Puedes grabar archivos "bag" para guardar datos del proecso
-- Tiene serguirdad integrada
+- Puedes grabar archivos "bag" para guardar datos del processor
+- Tiene seguridad integrada
 - Aplicable para aplicaciones de tiempo real
 - Maneja aplicaciones a grande escala, industriales y comerciales
 
@@ -63,13 +63,13 @@ Decir que a partir de ahora, siempre que digamos "ros" nos referimos a **ros2**
 
 ### ¿Dónde se usa ROS?
 
-- Autonomous Vehicles
-- Industrial Automation
-- Internet of Things (IoT)
-- Healthcare Robotics
-- Aerospace
-- Collaborative Robots (Cobots)
-- Research and Education
+- Vehículos autónomos
+- Automatización industrial
+- Internet de las cosas (IoT, por sus siglas en inglés)
+- Robótica en el ámbito de la salud
+- Aeroespacial
+- Robots colaborativos (Cobots)
+- Investigación y educación
 
 note: 
 
@@ -87,13 +87,13 @@ note:
 
 ### ¿Dónde se usa ROS?
 
-- Entertainment
-- Agriculture
-- Search and Rescue Missions
-- Marine Robotics
-- Service Robots
-- Military and Defense
-- Space Exploration
+- Entretenimiento
+- Agricultura
+- Misiones de búsqueda y rescate
+- Robótica marina
+- Robots de servicio
+- Militar y defensa
+- Exploración espacial
 
 note: 
 
@@ -791,7 +791,7 @@ ros2 topic echo /example_topic
 ### 😵Mucha terminal
 
 
-A veces muchos nodos están interactuando, y se vuelve complicado ver como se relacionan
+A veces muchos nodos están ejecutándose *al mismo tiempo*, y se vuelve complicado ver como se relacionan
 
 note: 
 
