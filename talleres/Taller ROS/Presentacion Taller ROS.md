@@ -316,7 +316,7 @@ Puedes usar **Python** desde la terminal:
 
 ![[Introduccion a Linux#^a117d1]]
 
-```python
+```python[]
 def main():
   print("hello world!!")
 
@@ -332,7 +332,7 @@ Hacer un ejemplo de un `hello world`
 
 **main.py**
 
-```python
+```python[]
 def main():
   print("hello world!!")
 
@@ -568,7 +568,7 @@ colcon build --packages-select ros2_pkg --symlink-install
 Un nodo se divide en dos partes principales
 
 Esta es la sección que se edita para hacer el funcionamiento deseado
-```python
+```python[]
 import rclpy
 from rclpy.node import Node
 
@@ -586,7 +586,7 @@ Esta sección siempre es la misma para todos los nodos, lo único que hay que ca
 - node_name
 - NodeName()
 
-```python
+```python[]
 def main(args=None) -> None:
     rclpy.init(args=args)
     node_name= NodeName()
@@ -622,7 +622,7 @@ class MyFirstPublisher(Node):
     # Create callback methods (subscribers and timers)
 ```
 ---
-```python
+```python[]
 def main(args=None) -> None:
     rclpy.init(args=args)
     my_first_publisher= MyFirstPublisher()
@@ -667,7 +667,7 @@ Para crear un timer se requiere de dos partes:
 - El callback que se ejecuta cada vez que se alcanza el tiempo establecido
 ---
 
-```python
+```python[]
 import rclpy
 from rclpy.node import Node
 
@@ -695,7 +695,7 @@ Para crear un publisher se requieren de dos partes:
 	- En este caso, el mensaje es de tipo String de std_msgs.msg
 ---
 
-```python
+```python[]
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
@@ -786,7 +786,7 @@ touch my_first_subscriber.py
 ```
 ---
 ### Copiar código de template al nuevo nodo y editar NodeName y node_name
-``` python
+```python[]
 import rclpy
 from rclpy.node import Node
 
@@ -800,7 +800,7 @@ class MyFirstSubscriber(Node):
     # Create callback methods (subscribers and timers)
 ```
 ---
-```python
+```python[]
 def main(args=None) -> None:
     rclpy.init(args=args)
     my_first_subscriber = MyFirstSubscriber()
