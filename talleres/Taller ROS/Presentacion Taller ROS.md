@@ -452,8 +452,7 @@ Ahora se requiere hacer source del **~/ros2_ws/install/setup.bash** para que cad
 Para hacer source y agregarlo al bashrc se puede correr el siguiente comando:
 
 ```bash
-cd
-source ~/ros2_ws/install/setup.bash && echo "source ~/ros2_ws/install/setup.bash" >> .bashrc
+source ~/ros2_ws/install/setup.bash && echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
 ```
 ---
 Para confirmar que todo el environment de ROS2 esté configurado correctamente, corre el siguiente comando:
@@ -483,7 +482,7 @@ sudo apt install ros-humble-turtlesim
 Ahora, asegúrate de tener todas las terminales sourceadas con
 
 ``` bash
-source .bashrc
+source ~/.bashrc
 ```
 
 ---
@@ -564,7 +563,7 @@ cd ..
 colcon build --packages-select ros2_pkg
 
 # Configuración para que ROS2 detecte el paquete
-source .bashrc
+source ~/.bashrc
 ```
 ---
 ### Topics y Messages 
@@ -767,8 +766,7 @@ class MyFirstPublisher(Node):
 ``` bash
 cd ros2_ws
 colcon build --packages-select ros2_ws --symlink-install
-cd
-source .bashrc
+source ~/.bashrc
 ```
 ---
 ## Correr el nodo
@@ -899,8 +897,7 @@ class MyFirstSubscriber(Node):
 ``` bash
 cd ros2_ws
 colcon build --packages-select ros2_ws --symlink-install
-cd
-source .bashrc
+source ~/.bashrc
 ```
 ---
 ## Correr publisher y subscriber
