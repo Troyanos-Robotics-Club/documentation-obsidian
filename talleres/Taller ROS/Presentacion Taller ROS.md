@@ -345,29 +345,6 @@ $ python3 hello-world.py # outputs "hello world"
 
 ---
 
-Agregas la linea para que la terminal pueda saber como correr el archivo de python
-
-```python
-#!/usr/bin/env python3
-
-print("hello world")
-```
-
-```bash
-```
-
-Ahora se puede llamar así
-
-```bash
-$ ./hello-world.py # outputs "hello world"
-```
-
-note: 
-
-Mencionar que esto sirve para que otros programas puedan usar el archivo de python
-
----
-
 ### Instalar paquetes
 
 En Python puedes usar paquetes y librerías **externas**. Para instalarlo, puedes usar `pip` (pip3)
@@ -380,14 +357,35 @@ $ sudo apt install python3-pip # instalar pip
 $ pip install <package_name> # instalar paquetes
 ```
 
+E.g.
+
+```bash
+$ pip install numpy pandas python-opencv # Entre otros
+```
+
 ---
 
-### Paquete necesario para Raspberry Pi
+### Paquetes necesarios para Raspberry Pi
 
-El paquete `RPi.GPIO` es un paquete que se usa para poder controlar la `raspberry pi`: 
+El paquete `RPi.GPIO` es un paquete que se usa para poder controlar la `raspberry pi` desde python: 
 
 ```bash
 pip install RPi.GPIO
+```
+
+note: 
+
+Mencionar que también se necesita
+
+El paquete `rpi.gpio-common` es un paquete que se usa para poder controlar la `raspberry pi` desde python: 
+
+```bash
+pip install RPi.GPIO
+sudo apt install rpi.gpio-common
+```
+
+```bash
+sudo apt install rpi.gpio-common
 ```
 
 ---
