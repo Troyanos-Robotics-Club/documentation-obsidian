@@ -396,41 +396,6 @@ pip install RPi.GPIO
 ---
 
 <!-- .slide: data-auto-animate -->
-### ⚡🐍Python
-
-También puedes crear **ambientes virtuales** en python:
-
-![[Python#^0152ce]]
-
-Se crea una carpeta `.venv` con las dependencias de python
-
-%% No se si se tiene que mostrar esto! %%
-
-note:
-
-Hacer los comandos que vienen en la presentacion
-
----
-
-<!-- .slide: data-auto-animate -->
-### ⚡🐍Python
-
-Para *activar* el ambiente virtual, usamos el comando: 
-
-![[Python#^87b519]]
-
-Con esto, nuestro `python` cambia a usar el de la carpeta `.venv`
-
-%% No se si se tiene que mostrar esto! %%
-
-note:
-
-1. Activa el ambiente virual
-2. Decir que ahora puedes usar `python normal`
-
-
----
-<!-- .slide: data-auto-animate -->
 ### Workspaces
 El workspace es donde se va a hacer todo el código de la aplicación de ROS2
 
