@@ -353,10 +353,7 @@ Agregas la linea para que la terminal pueda saber como correr el archivo de pyth
 print("hello world")
 ```
 
-Cambias el modo con el comando `chmod`
-
 ```bash
-$ chmod +x hello-world.py
 ```
 
 Ahora se puede llamar así
@@ -556,7 +553,6 @@ cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
 Crear el archivo .py y configurarlo como ejecutable
 ```bash
 touch node_name.py
-chmod +x node_name.py
 cd ..
 ```
 ---
@@ -611,7 +607,6 @@ Primero se crea un nuevo nodo llamado my_first_publisher.py
 ```bash
 cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
 touch my_first_publisher.py
-chmod +x my_first_publisher.py
 ```
 ---
 ### Copiar código de template al nuevo nodo y editar NodeName y node_name
@@ -790,7 +785,6 @@ Ahora se seguirá el mismo procedimiento para crear un nodo subscriber
 ```bash
 cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
 touch my_first_subscriber.py
-chmod +x my_first_subscriber.py
 ```
 ---
 ### Copiar código de template al nuevo nodo y editar NodeName y node_name
