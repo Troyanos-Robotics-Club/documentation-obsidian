@@ -1118,12 +1118,7 @@ Ve a Preferences->Settings->Python Auto Complete: Extra Paths->Edit in settings.
 ---
 ## Recap🔙
 Pasos para crear un nodo:
-1. Crear un archivo .py y agregar lo necesario
-	1. Publishers
-	2. Subscibers
-	3. Timers
-	4. Callbacks
-	5. Atributos
+1. Crear un archivo .py y agregar lo necesario (publishers, subscribers, atributos, métodos, etc.)
 2. Agregarlo a setup.py
 3. Hacer el build en el *directorio del workspace*
 4. Hacer el source del proyecto 
@@ -1145,8 +1140,14 @@ ros2 run <package> <nodo>
 ## Ahora siguen ustedes!😎
 ### Problema a resolver
 Se tiene un *Nodo* corriendo en una Raspberri Pi que está leyendo constantemente el valor de un sensor ultrasónico y el estado de un pulsador. Esta información la publica en topics diferentes.
+
 A su vez, recibe información de otros dos topics para encender un LED y abrir/cerrar una puerta. 
-El objetivo del proyecto es lograr:
+
+---
+<!-- .slide: data-auto-animate -->
+## Ahora siguen ustedes!😎
+### Objetivo
+El proyecto tiene que lograr:
 1. Cuando se pulse el botón la puerta se abra y se cierra automáticamente
 2. Cuando haya algún objeto a menos de 10 cm del sensor, el LED se encienda
 ---
@@ -1168,17 +1169,18 @@ graph TD
 ![[ejemplo_taller.png]]
 ---
 ### Nodo RPi
-- **/estado_led**: de tipo Bool. Enciende o apaga el LED. 
-- **/pwm_servo**: de tipo String:
+- **/estado_led**: Tipo Bool. Enciende o apaga el LED. 
+- **/pwm_servo**: Tipo String:
 	- "ABRIR" - Abre la puerta
 	- "CERRAR" - Cierra la puerta
 	- "ABRIR MUCHO" - Abre completamente la puerta
-- **/distancia_sensor**: de tipo Float32, manda constantemente el valor *leído del sensor* en cm.
-- **/estado_boton**: de tipo Bool, manda un True cuando el botón pasa de *no-presionado a presionado.*
+- **/distancia_sensor**: Tipo Float32, manda la distancia del sensor en cm.
+- **/estado_boton**: Tipo Bool, True cuando el botón pasa de no presionado a presionado.
 
 Los mensajes se obtuvieron de [std_msgs](https://docs.ros2.org/foxy/api/std_msgs/index-msg.html)
 
 ---
+
 <div style="display: flex; flex-direction: row;">
 <div style="flex: 1; font-size: 30x;">
 Nodo 1
@@ -1242,37 +1244,46 @@ class Nodo1(Node):
 %%Mostrar codigo desde la VM %%
 
 ---
+
 <!-- .slide: data-auto-animate -->
+
 ## Solución Nodo 2
+
 ---
-<!-- .slide: data-auto-animate --> 
+
+<!-- .slide: data-auto-animate -->
+
 ## Solución Nodo 2
+
 ```python
 # Prende el LED si hay alguien cerca
+
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Bool, Float32
 import time
 
 class Nodo2(Node):
-    def __init__(self) -> None:
-        super().__init__('Nodo2')
+	def __init__(self) -> None:
+		super().__init__('Nodo2')
 
-        # Create Publishers
-        self.publisher_LED = self.create_publisher(Bool,"estado_LED",10)
+		# Create Publishers
+		self.publisher_LED = self.create_publisher(Bool,"/estado_LED",10)
+		# Create Subscriber
+		self.subscriber_proximidad = self.create_subscription(Float32,"/distancia_sensor",self.callback_distancia,10)
+	
 
-        # Create Subscribers
-        self.subscriber_proximidad = self.create_subscription(Float32,"/distancia_sensor",self.callback_distancia,10)
-
-    # Create callback methods (subscribers and timers)
-    def callback_distancia(self,msg):
-        distancia = msg.data
-        msg_LED = Bool()
-        if (distancia < 10.0):
-            msg_LED.data = True
-        else: msg_LED.data = False
-        self.publisher_LED.publish(msg_LED)
 ```
-%%Mostrar codigo desde la VM %%
-
 ---
+
+```python
+def callback_distancia(self,msg):
+	distancia = msg.data
+	msg_LED = Bool()
+	if (distancia < 10.0):
+		msg_LED.data = True
+	else: 
+		msg_LED.data = False
+	self.publisher_LED.publish(msg_LED)
+
+```
