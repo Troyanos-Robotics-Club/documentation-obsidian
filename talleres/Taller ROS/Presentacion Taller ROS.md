@@ -4,7 +4,7 @@ slideNumber: true
 theme: beige
 ---
 
-# Bienvenidxs a Introducción ROS2
+# 🤖Bienvenidxs a Introducción ROS2
 
 ---
 
@@ -15,13 +15,13 @@ theme: beige
 [Video de introducción de ROS](https://vimeo.com/639236696)
 
 ---
-### ¿Porqué Es ROS?
+### ¿Por qué ROS?
 
-Permite la integración entre múltiples sensores, algoritmos y comandos de una manera más amigable
+Permite la integración entre múltiples sensores, algoritmos y commandos fácilmente
 
-![Imagen de robots comunicandose](https://prod-discovery.edx-cdn.org/media/course/image/bf9f18e0-2bab-4600-ae3e-64d0743d9482-321df2b18306.small.png)
+![Imagen de robots comunicándose](https://prod-discovery.edx-cdn.org/media/course/image/bf9f18e0-2bab-4600-ae3e-64d0743d9482-321df2b18306.small.png)
 
-Puedes levantar varios nodos que corrar de menera simultanea, sin necesdidad de configurar **multitrehading** o la comunicación
+Puedes levantar varios nodos se ejecuten de manera simultanea, sin necesidad de configurar **multithreading** o la comunicación
 
 ---
 
@@ -37,11 +37,11 @@ Decir que ROS es el predecesor
 
 ## Diferencia Entre ROS Y ROS2
 
-**ROS2** es el sucessor de **ROS**. Tiene más features como:
+**ROS2** es el sucesor de **ROS**. Tiene más features como:
 
 - Usa python3.7 y C++11
-- Puedes grabar archivos "bag" para guardar datos del proecso
-- Tiene serguirdad integrada
+- Puedes grabar archivos "bag" para guardar datos del processor
+- Tiene seguridad integrada
 - Aplicable para aplicaciones de tiempo real
 - Maneja aplicaciones a grande escala, industriales y comerciales
 
@@ -63,13 +63,33 @@ Decir que a partir de ahora, siempre que digamos "ros" nos referimos a **ros2**
 
 ### ¿Dónde se usa ROS?
 
-- Autonomous Vehicles
-- Industrial Automation
-- Internet of Things (IoT)
-- Healthcare Robotics
-- Aerospace
-- Collaborative Robots (Cobots)
-- Research and Education
+<split even gap="0">
+
+::: block
+
+- Vehículos autónomos
+- Automatización industrial
+- IoT
+- Robótica en el ámbito de la salud
+- Aeroespacial
+- Robots colaborativos (Cobots)
+- Investigación y educación
+
+:::
+
+::: block
+
+- Entretenimiento
+- Agricultura
+- Misiones de búsqueda y rescate
+- Robótica marina
+- Robots de servicio
+- Militar y defensa
+- Exploración espacial
+
+:::
+
+</split>
 
 note: 
 
@@ -80,27 +100,6 @@ note:
 1. **Aerospace:**  For drones and rovers used in exploration, mapping, and surveillance, ROS2 offers robustness and the ability to handle complex communication systems.
 1. **Collaborative Robots (Cobots):**  ROS2's features support better human-robot interaction, necessary for cobots working alongside humans in shared workspaces.
 1. **Research and Education:**  Academic institutions can use ROS2 for cutting-edge research in robotics, ensuring that students and researchers are working with industry-standard tools.
-
----
-
-<!-- .slide: data-auto-animate -->
-
-### ¿Dónde se usa ROS?
-
-- Entertainment
-- Agriculture
-- Search and Rescue Missions
-- Marine Robotics
-- Service Robots
-- Military and Defense
-- Space Exploration
-
-note: 
-
-[Ejemplos de ros](https://design.ros2.org/articles/why_ros2.html)
-
-Ejemplos de aplicaciones: 
-
 1. **Entertainment:**  Theme parks and entertainment industries can employ ROS2 to control animatronics and interactive robots for enhanced audience experiences.
 1. **Agriculture:**  For precision agriculture, ROS2 can help manage fleets of agricultural robots used for planting, monitoring crops, and harvesting.
 1. **Search and Rescue Missions:**  ROS2's reliable communication system is ideal for coordinating multiple robots in challenging environments during search and rescue operations.
@@ -108,6 +107,8 @@ Ejemplos de aplicaciones:
 1. **Service Robots:**  For robots that operate in service industries, like those in hospitality or retail, ROS2's enhanced interaction capabilities and security features are crucial.
 1. **Military and Defense:**  ROS2 can be used to develop and deploy robots for surveillance, bomb disposal, and logistics support in defense applications.
 1. **Space Exploration:**  Space rovers and robotic assistants for astronauts can be developed using ROS2, taking advantage of its robustness and advanced communication capabilities.
+
+[Ejemplos de ros](https://design.ros2.org/articles/why_ros2.html)
 
 ---
 
@@ -268,13 +269,11 @@ Si los usuarios no están usando bash, comentar que puede ser `.zhrc` o algo par
 <!-- .slide: data-auto-animate -->
 ### ⚡⚙Agregar Configuraciones
 
-Puedes agregar más configuraciones en *la sessión* usando el comando de `source`
+Puedes agregar más configuraciones en *la sesión* usando el comando de `source`. También sirve para "reiniciar" las configuraciones
 
 ```sh
 # Init terminal
 $ source ~/.bashrc
-$ source ~/.config.sh
-$ source ~/.install.sh
 
 ```
 
@@ -283,9 +282,25 @@ $ source ~/.install.sh
 <!-- .slide: data-auto-animate -->
 ### ⚡⚙Agregar Configuraciones
 
-![[Introduccion a Linux#^2d5420]] <!-- element style="width:130%; height:auto;" -->
+```mermaid <!-- element style="width:130%; height:auto;" -->
+flowchart LR
+subgraph init
+    startInit[Open Terminal] --> A["source ~/.bashrc"] 
+end
 
-Esto nos servirá para configurar `ros` cuando estemos usando la terminal
+subgraph session
+start[Start session] --> W
+W[Work on ROS Project] --> build
+build[Build project] -->  C["source ~/.bashrc"]
+C --> W
+end
+
+init --> session
+
+```
+
+
+El proceso de trabajar con `ROS` involucra reiniciar las configuraciones cada vez que se haga un **build**
 
 ---
 
@@ -301,6 +316,14 @@ Puedes usar **Python** desde la terminal:
 
 ![[Introduccion a Linux#^a117d1]]
 
+```python[]
+def main():
+  print("hello world!!")
+
+if __name__ == "__main__":
+  main()
+```
+
 ![[Introduccion a Linux#^dd2dba]]
 
 note:
@@ -309,7 +332,7 @@ Hacer un ejemplo de un `hello world`
 
 **main.py**
 
-```python
+```python[]
 def main():
   print("hello world!!")
 
@@ -317,57 +340,9 @@ if __name__ == "__main__":
   main()
 ```
 
----
-
-<!-- .slide: data-auto-animate -->
-### ⚡🐍Python
-
-Ocasionalmente, puedes necesitar que el archivo de *python* sea un *ejecutable*. Para esto se necesitan 2 condiciones:
-
-1. Cambiar el modo del archivo a ejecutable
-2. Agregar `#!/usr/bin/env python3` al principio del archivo
-
----
-
-Ejemplo con archivo `hello-world.py`
-
-```python
-print("hello world")
-```
-
 ```bash
 $ python3 hello-world.py # outputs "hello world"
 ```
-
-note: 
-
-Mencionar que así se corren los archivos normalmente
-
----
-
-Agregas la linea para que la terminal pueda saber como correr el archivo de python
-
-```python
-#!/usr/bin/env python3
-
-print("hello world")
-```
-
-Cambias el modo con el comando `chmod`
-
-```bash
-$ chmod +x hello-world.py
-```
-
-Ahora se puede llamar así
-
-```bash
-$ ./hello-world.py # outputs "hello world"
-```
-
-note: 
-
-Mencionar que esto sirve para que otros programas puedan usar el archivo de python
 
 ---
 
@@ -383,58 +358,45 @@ $ sudo apt install python3-pip # instalar pip
 $ pip install <package_name> # instalar paquetes
 ```
 
+E.g.
+
+```bash
+$ pip install numpy pandas python-opencv # Entre otros
+```
+
 ---
 
-### Paquete necesario para Raspberry Pi
+### Paquetes necesarios para Raspberry Pi
 
-El paquete `RPi.GPIO` es un paquete que se usa para poder controlar la `raspberry pi`: 
+El paquete `RPi.GPIO` es un paquete que se usa para poder controlar la `raspberry pi` desde python: 
 
 ```bash
 pip install RPi.GPIO
 ```
 
----
+note: 
 
-<!-- .slide: data-auto-animate -->
-### ⚡🐍Python
+Mencionar que también se necesita
 
-También puedes crear **ambientes virtuales** en python:
+El paquete `rpi.gpio-common` es un paquete que se usa para poder controlar la `raspberry pi` desde python: 
 
-![[Python#^0152ce]]
+```bash
+pip install RPi.GPIO
+sudo apt install rpi.gpio-common
+```
 
-Se crea una carpeta `.venv` con las dependencias de python
-
-%% No se si se tiene que mostrar esto! %%
-
-note:
-
-Hacer los comandos que vienen en la presentacion
+```bash
+sudo apt install rpi.gpio-common
+```
 
 ---
 
-<!-- .slide: data-auto-animate -->
-### ⚡🐍Python
-
-Para *activar* el ambiente virtual, usamos el comando: 
-
-![[Python#^87b519]]
-
-Con esto, nuestro `python` cambia a usar el de la carpeta `.venv`
-
-%% No se si se tiene que mostrar esto! %%
-
-note:
-
-1. Activa el ambiente virtual
-2. Decir que ahora puedes usar `python normal`
-
----
 ### Estructura general de ROS2
 
 ![[estructura_ros.png|700]]
 
 ---
-<!-- .slide: data-auto-animate -->
+
 ### Workspaces
 El workspace es donde se va a hacer todo el código de la aplicación de ROS2
 
@@ -456,8 +418,7 @@ Ahora se requiere hacer source del **~/ros2_ws/install/setup.bash** para que cad
 Para hacer source y agregarlo al bashrc se puede correr el siguiente comando:
 
 ```bash
-cd
-source ~/ros2_ws/install/setup.bash && echo "source ~/ros2_ws/install/setup.bash" >> .bashrc
+source ~/ros2_ws/install/setup.bash && echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
 ```
 ---
 Para confirmar que todo el environment de ROS2 esté configurado correctamente, corre el siguiente comando:
@@ -510,9 +471,8 @@ Mientras estas en la terminal de teleopkey, puedes controlar la tortuga de la in
 Ahora para ver un ejemplo de lo que se puede llegar a hacer con esta simple aplicación, corre el siguiente comando
 
 ``` bash
-cd
 cd ~/ros2_ws/src/
-git clone https://github.com/davidogarzas/taller_ros.git
+git clone https://github.com/davidogarzas/taller_ros2.git
 cd ..
 colcon build
 source ~/ros2_ws/install/setup.bash
@@ -621,7 +581,7 @@ colcon build --packages-select ros2_pkg --symlink-install
 Un nodo se divide en dos partes principales
 
 Esta es la sección que se edita para hacer el funcionamiento deseado
-```python
+```python[]
 import rclpy
 from rclpy.node import Node
 
@@ -639,7 +599,7 @@ Esta sección siempre es la misma para todos los nodos, lo único que hay que ca
 - node_name
 - NodeName()
 
-```python
+```python[]
 def main(args=None) -> None:
     rclpy.init(args=args)
     node_name= NodeName()
@@ -675,7 +635,7 @@ class MyFirstPublisher(Node):
     # Create callback methods (subscribers and timers)
 ```
 ---
-```python
+```python[]
 def main(args=None) -> None:
     rclpy.init(args=args)
     my_first_publisher= MyFirstPublisher()
@@ -719,7 +679,7 @@ class MyFirstPublisher(Node):
 - La función *callback* que ejecuta en cada periodo
 ---
 
-```python
+```python[]
 import rclpy
 from rclpy.node import Node
 
@@ -746,7 +706,7 @@ class MyFirstPublisher(Node):
 	
 ---
 
-```python
+```python[]
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import String
@@ -798,7 +758,7 @@ ros2 topic echo /example_topic
 ### 😵Mucha terminal
 
 
-A veces muchos nodos están interactuando, y se vuelve complicado ver como se relacionan
+A veces muchos nodos están ejecutándose *al mismo tiempo*, y se vuelve complicado ver como se relacionan
 
 note: 
 
@@ -837,7 +797,7 @@ touch my_first_subscriber.py
 ```
 ---
 ### Copiar código de template al nuevo nodo y editar NodeName y node_name
-``` python
+```python[]
 import rclpy
 from rclpy.node import Node
 
@@ -851,7 +811,7 @@ class MyFirstSubscriber(Node):
     # Create callback methods (subscribers and timers)
 ```
 ---
-```python
+```python[]
 def main(args=None) -> None:
     rclpy.init(args=args)
     my_first_subscriber = MyFirstSubscriber()
