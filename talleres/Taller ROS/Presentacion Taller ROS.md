@@ -1295,6 +1295,7 @@ El proyecto tiene que lograr:
 ---
 
 <!-- .slide: data-auto-animate -->
+
 ### Diagrama de Nodos Esperado
 
 ```mermaid <!-- element style="width:130%; height:auto;" -->
@@ -1310,6 +1311,7 @@ graph TD
 ---
 
 <!-- .slide: data-auto-animate -->
+
 ### Diagrama de Nodos Esperado
 
 ![[ejemplo_taller.png]]
@@ -1432,7 +1434,7 @@ class Nodo2(Node):
 
 ---
 
-```python
+```python[]
 def callback_distancia(self,msg):
 	distancia = msg.data
 	msg_LED = Bool()
@@ -1441,5 +1443,4 @@ def callback_distancia(self,msg):
 	else: 
 		msg_LED.data = False
 	self.publisher_LED.publish(msg_LED)
-
 ```
