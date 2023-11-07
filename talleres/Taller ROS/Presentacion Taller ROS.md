@@ -1135,13 +1135,13 @@ Dentro de este nuevo package, entra al archivo *package.xml* y vamos a editarlo
 
 Debajo de:
 
-```
+```xml[]
 <buildtool_depend>ament_cmake</buildtool_depend>
 ```
 
 Agrega las siguientes 3 líneas:
 
-``` xml
+```xml[]
 <build_depend>rosidl_default_generators</build_depend>
 <exec_depend>rosidl_default_runtime</exec_depend>
 <member_of_group>rosidl_interface_packages</member_of_group>
@@ -1155,7 +1155,7 @@ Borra la sección de *if(BUILD_TESTING)*
 
 Ahora en la sección de *find_dependencies* agrega las siguientes líneas:
 
-```
+```cmake
 find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME})
 ament_export_dependencies(rosidl_default_runtime)
@@ -1167,7 +1167,7 @@ Con esto el paquete ya está configurado y puedes empezar a hacer tus propios me
 
 En la terminal vamos a crear un nuevo archivo tipo *.msg* llamado *MyCustomMsg*
 
-``` bash
+```bash
 cd ros2_ws/src/my_custom_interfaces/msg
 touch MyCustomMsg.msg
 ```
@@ -1178,7 +1178,7 @@ IMPORTANTE: Los nombres de los mensajes deben empezar con Mayúscula, y todas la
 
 Abrimos el archivo y vamos a agregar las siguientes líneas:
 
-```
+```[]
 string data1
 bool data2
 int64[3] data3
@@ -1186,7 +1186,7 @@ int64[3] data3
 
 Ahora en el archivo de CMakeLists, edita la línea de rosidl_generate_interfaces(${PROJECT_NAME}) para que te quede así:
 
-```
+```cmake[]
 rosidl_generate_interfaces({PROJECT_NAME}
 	"msg/MyCustomMsg.msg"
 )
@@ -1216,6 +1216,7 @@ ros2 interface show my_custom_interface/msg/MyCustomMsg
 ```
 
 ![[MyCustomMsg.png]]
+
 ---
 
 Finalmente vamos a agregar la dependencia al paquete de
@@ -1223,7 +1224,7 @@ Finalmente vamos a agregar la dependencia al paquete de
 
 Abre el *package.xml* de *ros2_pkg* y agrega la siguiente línea:
 
-``` xml
+```xml[]
 <depend>my_custom_interfaces</depend>
 ```
 
@@ -1231,7 +1232,7 @@ Abre el *package.xml* de *ros2_pkg* y agrega la siguiente línea:
 
 Ahora cuando quieras usar este mensaje, lo único que hay que hacer es importarlo al código como
 
-``` python
+```python[]
 from my_custom_interfaces.msg import MyCustomMsg
 ```
 
@@ -1249,13 +1250,13 @@ Pasos para crear un nodo:
 3. Hacer el build en el *directorio del workspace*
 4. Hacer el source del proyecto
 
-```sh 
+```bash 
 source ~/.bashrc 
 ```
 
 5. Correr el nodo
 
-```sh
+```bash
 ros2 run <package> <nodo>
 ```
 
