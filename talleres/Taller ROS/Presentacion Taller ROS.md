@@ -1294,23 +1294,26 @@ El proyecto tiene que lograr:
 2. Cuando haya algún objeto a menos de 10 cm del sensor, el LED se encienda
 ---
 
+<!-- .slide: data-auto-animate -->
 ### Diagrama de Nodos Esperado
 
-```mermaid
+```mermaid <!-- element style="width:130%; height:auto;" -->
 graph TD
-	subgraph CustomSize [1500px,1400px]
-		RPI([NodoRPI]) --> B[" /estado boton"]
-		B --> C([Nodo1]) --> pwm["/pwm_servo"]
-		pwm --> RPI
-		RPI --> dist["/distancia_sensor"]
-		dist --> D([Nodo2])
-		D --> L["/estado_led"] --> RPI
-	end
+	RPI([NodoRPI]) --> B[" /estado boton"]
+	B --> C([Nodo1]) --> pwm["/pwm_servo"]
+	pwm --> RPI
+	RPI --> dist["/distancia_sensor"]
+	dist --> D([Nodo2])
+	D --> L["/estado_led"] --> RPI
 ```
 
 ---
 
+<!-- .slide: data-auto-animate -->
+### Diagrama de Nodos Esperado
+
 ![[ejemplo_taller.png]]
+
 ---
 
 ### Nodo RPi
