@@ -431,7 +431,7 @@ note:
 ---
 ### Estructura general de ROS2
 
-![[Estructura_general_ROS.excalidraw.png|500]]
+![[estructura_ros.png|700]]
 
 ---
 <!-- .slide: data-auto-animate -->
