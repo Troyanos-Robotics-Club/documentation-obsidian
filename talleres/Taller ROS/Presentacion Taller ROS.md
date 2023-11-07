@@ -1444,3 +1444,16 @@ def callback_distancia(self,msg):
 		msg_LED.data = False
 	self.publisher_LED.publish(msg_LED)
 ```
+
+>
+
+note:
+
+TLDR: NO BORREN EL ">"
+
+Explicación:
+
+Resulta que el redering the advanced slides busca html (E.g. \<div\>\</div\>). Por lo que cuando pones lo de `distancia < 10.0` se confunde porque "falta" el \> 
+
+---
+
