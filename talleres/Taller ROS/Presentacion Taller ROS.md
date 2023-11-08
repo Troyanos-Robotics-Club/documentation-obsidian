@@ -113,40 +113,6 @@ note:
 
 ---
 
-<grid drag="100 50" drop="bottom">
-![[carrito-robotico2.jpeg|485]]
-%% Carro horizontal %%
-</grid>
-
-<grid drag="70 50" drop="topleft">
-![[carrito-robotico1.jpeg|200]]
-%% Carro vertical %%
-</grid>
-
-<grid drag="70 50" drop="topright">
-![[carrito-robotico-3.jpeg|200]]
-%% Carro vertical 2 %%
-</grid>
-
-<grid drag="35 100" drop="left" rotate="270">
-**Ejemplo: Control del carrito**
-%% Carro vertical 2 %%
-</grid>
-
-note:
-
-Aqui es la demostración del carrito
-
----
-
-![[P2 Reference Coordinates.png]]
-
-note:
-
-Mostrar como funciona
-
----
-
 ### 🤖¿Listos Para Aprender?
 
 ---
@@ -1453,7 +1419,6 @@ TLDR: NO BORREN EL ">"
 
 Explicación:
 
-Resulta que el redering the advanced slides busca html (E.g. \<div\>\</div\>). Por lo que cuando pones lo de `distancia < 10.0` se confunde porque "falta" el \> 
+Resulta que el redering the advanced slides busca html (E.g. \<div\>\</div\>). Por lo que cuando pones lo de `distancia < 10.0` se confunde porque "falta" el \>
 
 ---
-
