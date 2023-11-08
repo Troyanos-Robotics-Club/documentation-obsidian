@@ -4,7 +4,7 @@ slideNumber: true
 theme: beige
 ---
 
-# 🤖Bienvenidxs a Introducción ROS2
+# 🤖Bienvenidxs A Introducción ROS2
 
 ---
 
@@ -15,7 +15,8 @@ theme: beige
 [Video de introducción de ROS](https://vimeo.com/639236696)
 
 ---
-### ¿Por qué ROS?
+
+### ¿Por Qué ROS?
 
 Permite la integración entre múltiples sensores, algoritmos y commandos fácilmente
 
@@ -29,7 +30,7 @@ Puedes levantar varios nodos se ejecuten de manera simultanea, sin necesidad de 
 
 🤔
 
-note: 
+note:
 
 Decir que ROS es el predecesor
 
@@ -47,13 +48,13 @@ Decir que ROS es el predecesor
 
 ---
 
-### 💀ROS va a ser descontinuado
+### 💀ROS Va a Ser Descontinuado
 
 ---
 
-### 🦸ROS2 sigue en constante desarrollo
+### 🦸ROS2 Sigue En Constante Desarrollo
 
-note: 
+note:
 
 Decir que a partir de ahora, siempre que digamos "ros" nos referimos a **ros2**
 
@@ -61,7 +62,7 @@ Decir que a partir de ahora, siempre que digamos "ros" nos referimos a **ros2**
 
 <!-- .slide: data-auto-animate -->
 
-### ¿Dónde se usa ROS?
+### ¿Dónde Se Usa ROS?
 
 <split even gap="0">
 
@@ -91,28 +92,26 @@ Decir que a partir de ahora, siempre que digamos "ros" nos referimos a **ros2**
 
 </split>
 
-note: 
+note:
 
-1. **Autonomous Vehicles:**  ROS2's real-time capabilities and improved security are critical for the development and operation of self-driving cars, drones, and underwater vehicles.
-1. **Industrial Automation:**  Robotics arms, automated guided vehicles (AGVs), and other robotic systems in manufacturing and logistics can benefit from ROS2's improved communication and control features.
-1. **Internet of Things (IoT):**  ROS2 can facilitate the integration of robots with sensors and other IoT devices in smart homes, smart cities, and smart factories due to its support for diverse communication protocols.
-1. **Healthcare Robotics:**  In surgical robots, rehabilitation devices, and hospital logistics robots, ROS2's real-time processing and enhanced security ensure safe and reliable operations.
-1. **Aerospace:**  For drones and rovers used in exploration, mapping, and surveillance, ROS2 offers robustness and the ability to handle complex communication systems.
-1. **Collaborative Robots (Cobots):**  ROS2's features support better human-robot interaction, necessary for cobots working alongside humans in shared workspaces.
-1. **Research and Education:**  Academic institutions can use ROS2 for cutting-edge research in robotics, ensuring that students and researchers are working with industry-standard tools.
-1. **Entertainment:**  Theme parks and entertainment industries can employ ROS2 to control animatronics and interactive robots for enhanced audience experiences.
-1. **Agriculture:**  For precision agriculture, ROS2 can help manage fleets of agricultural robots used for planting, monitoring crops, and harvesting.
-1. **Search and Rescue Missions:**  ROS2's reliable communication system is ideal for coordinating multiple robots in challenging environments during search and rescue operations.
-1. **Marine Robotics:**  In underwater exploration and monitoring, ROS2's support for robust, distributed systems is invaluable for managing complex tasks and data collection.
-1. **Service Robots:**  For robots that operate in service industries, like those in hospitality or retail, ROS2's enhanced interaction capabilities and security features are crucial.
-1. **Military and Defense:**  ROS2 can be used to develop and deploy robots for surveillance, bomb disposal, and logistics support in defense applications.
-1. **Space Exploration:**  Space rovers and robotic assistants for astronauts can be developed using ROS2, taking advantage of its robustness and advanced communication capabilities.
+1. **Autonomous Vehicles:** ROS2's real-time capabilities and improved security are critical for the development and operation of self-driving cars, drones, and underwater vehicles.
+1. **Industrial Automation:** Robotics arms, automated guided vehicles (AGVs), and other robotic systems in manufacturing and logistics can benefit from ROS2's improved communication and control features.
+1. **Internet of Things (IoT):** ROS2 can facilitate the integration of robots with sensors and other IoT devices in smart homes, smart cities, and smart factories due to its support for diverse communication protocols.
+1. **Healthcare Robotics:** In surgical robots, rehabilitation devices, and hospital logistics robots, ROS2's real-time processing and enhanced security ensure safe and reliable operations.
+1. **Aerospace:** For drones and rovers used in exploration, mapping, and surveillance, ROS2 offers robustness and the ability to handle complex communication systems.
+1. **Collaborative Robots (Cobots):** ROS2's features support better human-robot interaction, necessary for cobots working alongside humans in shared workspaces.
+1. **Research and Education:** Academic institutions can use ROS2 for cutting-edge research in robotics, ensuring that students and researchers are working with industry-standard tools.
+1. **Entertainment:** Theme parks and entertainment industries can employ ROS2 to control animatronics and interactive robots for enhanced audience experiences.
+1. **Agriculture:** For precision agriculture, ROS2 can help manage fleets of agricultural robots used for planting, monitoring crops, and harvesting.
+1. **Search and Rescue Missions:** ROS2's reliable communication system is ideal for coordinating multiple robots in challenging environments during search and rescue operations.
+1. **Marine Robotics:** In underwater exploration and monitoring, ROS2's support for robust, distributed systems is invaluable for managing complex tasks and data collection.
+1. **Service Robots:** For robots that operate in service industries, like those in hospitality or retail, ROS2's enhanced interaction capabilities and security features are crucial.
+1. **Military and Defense:** ROS2 can be used to develop and deploy robots for surveillance, bomb disposal, and logistics support in defense applications.
+1. **Space Exploration:** Space rovers and robotic assistants for astronauts can be developed using ROS2, taking advantage of its robustness and advanced communication capabilities.
 
 [Ejemplos de ros](https://design.ros2.org/articles/why_ros2.html)
 
 ---
-
-
 
 <grid drag="100 50" drop="bottom">
 ![[carrito-robotico2.jpeg|485]]
@@ -142,14 +141,13 @@ Aqui es la demostración del carrito
 
 ![[P2 Reference Coordinates.png]]
 
-note: 
+note:
 
 Mostrar como funciona
 
 ---
 
-### 🤖¿Listos para aprender?
-
+### 🤖¿Listos Para Aprender?
 
 ---
 
@@ -178,11 +176,13 @@ Estos son algunos de ejemplos de commandos en `ros2`
 ---
 
 <!-- .slide: data-auto-animate -->
+
 ### ⚡🚢Navegación En File System
 
 ---
 
 <!-- .slide: data-auto-animate -->
+
 ### ⚡🚢Navegación En File System
 
 - `pwd`: *Print working directory* Te dice en que ubicación estás
@@ -247,11 +247,13 @@ Estas son las notas de la investigación
 ---
 
 <!-- .slide: data-auto-animate -->
+
 ### ⚡⚙Agregar Configuraciones
 
 ---
 
 <!-- .slide: data-auto-animate -->
+
 ### ⚡⚙Agregar Configuraciones
 
 Cuando se abre la terminal, se leen las configuraciones en el `.bashrc` y luego empieza *la session*
@@ -267,6 +269,7 @@ Si los usuarios no están usando bash, comentar que puede ser `.zhrc` o algo par
 ---
 
 <!-- .slide: data-auto-animate -->
+
 ### ⚡⚙Agregar Configuraciones
 
 Puedes agregar más configuraciones en *la sesión* usando el comando de `source`. También sirve para "reiniciar" las configuraciones
@@ -280,6 +283,7 @@ $ source ~/.bashrc
 ---
 
 <!-- .slide: data-auto-animate -->
+
 ### ⚡⚙Agregar Configuraciones
 
 ```mermaid <!-- element style="width:130%; height:auto;" -->
@@ -299,17 +303,18 @@ init --> session
 
 ```
 
-
 El proceso de trabajar con `ROS` involucra reiniciar las configuraciones cada vez que se haga un **build**
 
 ---
 
 <!-- .slide: data-auto-animate -->
+
 ### ⚡🐍Python
 
 ---
 
 <!-- .slide: data-auto-animate -->
+
 ### ⚡🐍Python
 
 Puedes usar **Python** desde la terminal:
@@ -346,7 +351,7 @@ $ python3 hello-world.py # outputs "hello world"
 
 ---
 
-### Instalar paquetes
+### Instalar Paquetes
 
 En Python puedes usar paquetes y librerías **externas**. Para instalarlo, puedes usar `pip` (pip3)
 
@@ -366,19 +371,19 @@ $ pip install numpy pandas python-opencv # Entre otros
 
 ---
 
-### Paquetes necesarios para Raspberry Pi
+### Paquetes Necesarios Para Raspberry Pi
 
-El paquete `RPi.GPIO` es un paquete que se usa para poder controlar la `raspberry pi` desde python: 
+El paquete `RPi.GPIO` es un paquete que se usa para poder controlar la `raspberry pi` desde python:
 
 ```bash
 pip install RPi.GPIO
 ```
 
-note: 
+note:
 
 Mencionar que también se necesita
 
-El paquete `rpi.gpio-common` es un paquete que se usa para poder controlar la `raspberry pi` desde python: 
+El paquete `rpi.gpio-common` es un paquete que se usa para poder controlar la `raspberry pi` desde python:
 
 ```bash
 pip install RPi.GPIO
@@ -391,16 +396,18 @@ sudo apt install rpi.gpio-common
 
 ---
 
-### Estructura general de ROS2
+### Estructura General de ROS2
 
 ![[estructura_ros.png|700]]
 
 ---
 
 ### Workspaces
+
 El workspace es donde se va a hacer todo el código de la aplicación de ROS2
 
 Para crear un workspace se hace lo siguiente
+
 ```bash
 cd
 mkdir ros2_ws
@@ -408,11 +415,13 @@ cd ros2_ws
 mkdir src
 colcon build
 ```
+
 Ahora el ros2_ws debe contener 4 folders:
 
 -build -install -log -src
 
 ---
+
 Ahora se requiere hacer source del **~/ros2_ws/install/setup.bash** para que cada vez que se abra la terminal se detecte este workspace
 
 Para hacer source y agregarlo al bashrc se puede correr el siguiente comando:
@@ -420,14 +429,18 @@ Para hacer source y agregarlo al bashrc se puede correr el siguiente comando:
 ```bash
 source ~/ros2_ws/install/setup.bash && echo "source ~/ros2_ws/install/setup.bash" >> ~/.bashrc
 ```
+
 ---
+
 Para confirmar que todo el environment de ROS2 esté configurado correctamente, corre el siguiente comando:
+
 ```bash
 cd
 gedit ~/.bashrc
 ```
 
 Ve hasta abajo del documento y se deben ver las siguientes 3 líneas:
+
 ``` gedit
 source /opt/ros/humble/setup.bash
 source ~/ros2_ws/install/setup.bash
@@ -435,6 +448,7 @@ source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
 ```
 
 ---
+
 ### Turtlesim 🐢
 
 Turtlesim es un paquete ya incluido de ROS2 que tiene una versión simplificada de una simulación de un robot
@@ -452,6 +466,7 @@ source ~/.bashrc
 ```
 
 ---
+
 Para correr la interfaz de turtlesim corre lo siguiente en una terminal:
 
 ```bash
@@ -465,9 +480,13 @@ ros2 run turtlesim turtle_teleop_key
 ```
 
 ---
+
 Mientras estas en la terminal de teleopkey, puedes controlar la tortuga de la interfaz
+
 ![[Correr Turtlesim.png]]
+
 ---
+
 Ahora para ver un ejemplo de lo que se puede llegar a hacer con esta simple aplicación, corre el siguiente comando
 
 ``` bash
@@ -479,6 +498,7 @@ source ~/ros2_ws/install/setup.bash
 ```
 
 ---
+
 Ahora se requeriran 4 terminales. Para cada terminal, corre los siguientes comandos:
 
 ``` bash
@@ -504,21 +524,28 @@ Ahora deberás ver un programa en el que automáticamente aparecen tortugas en l
 ![[turtle_chaser.png]]
 
 ---
-### Funcionamiento general
+
+### Funcionamiento General
 
 Esquemática general ejemplo del funcionamiento de ROS2
 
 ![[diagrama_ejemplo_ros2.png|500]]
 ---
+
 Funcionamiento:
+
 1. Se crea un *Nodo* con un *Publisher*
 2. Se crea un *Nodo* con un *Subscriber*
 3. *Publisher* manda *mensajes* a un *topic*
 4. *Subscriber* recibe los *mensajes* del mismo *topic*
 Un mismo nodo puede tener tantos publishers y subscribers como se desee
+
 ---
+
 ### Paquetes
+
 Conjunto de nodos que forman una red en ROS2
+
 ```bash
 cd ~/ros2_ws/src
 
@@ -530,36 +557,47 @@ colcon build --packages-select ros2_pkg
 # Configuración para que ROS2 detecte el paquete
 source ~/.bashrc
 ```
+
 ---
-### Topics y Messages 
+
+### Topics Y Messages
 
 ![[topics.png|900]]
 Los *Topics* son los canales por los que los nodos se comunican.
 Toda la información que fluye por el *topic* debe estar en formato de un *message*.
 
 ---
-### Topics y Messages
-![[ejemplo_mensaje.png|400]]
-Los *mensajes* son el tipo de **toda la información** que fluye en el *topic*. 
 
-Se declaran en un *package* separado y se importan. 
+### Topics Y Messages
+
+![[ejemplo_mensaje.png|400]]
+Los *mensajes* son el tipo de **toda la información** que fluye en el *topic*.
+
+Se declaran en un *package* separado y se importan.
 
 ---
-## ¿Cómo crear un nodo?
+
+## ¿Cómo Crear un Nodo?
 
 Ir al source del workspace
+
 ```bash
 # Ir al src del ws
 cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
 
 ```
+
 Crear el archivo .py y configurarlo como ejecutable
+
 ```bash
 touch node_name.py
 cd ..
 ```
+
 ---
+
 3. Añadir el ejecutable a ROS2 en *setup.py*
+
 ``` python
 entry_points = {
 	'console_scripts': [
@@ -570,17 +608,22 @@ entry_points = {
 
 4. Editar el nodo: Tomar como base la template
 5. Regresar al directorio del workspace y hacer *colcon build*
+
 ```bash
 cd ~/ros2_ws
 colcon build --packages-select ros2_pkg --symlink-install
 ```
+
 %% Mencionar qué es packages-select y symlink-install Mostrar el código de ejemplo y de añadir el ejecutable desde la VM. El ejemplo de código lo va a mostrar garza%%
 
 ---
+
 ## Template Nodo
+
 Un nodo se divide en dos partes principales
 
 Esta es la sección que se edita para hacer el funcionamiento deseado
+
 ```python[]
 import rclpy
 from rclpy.node import Node
@@ -594,8 +637,11 @@ class NodeName(Node):
         # Create timers
     # Create callback methods (subscribers and timers)
 ```
+
 ---
+
 Esta sección siempre es la misma para todos los nodos, lo único que hay que cambiar son:
+
 - node_name
 - NodeName()
 
@@ -612,15 +658,22 @@ if __name__=='__main__':
     except Exception as e:
         print(e)
 ```
+
 ---
-## Crear ejemplo de Nodo Publisher
+
+## Crear Ejemplo de Nodo Publisher
+
 Primero se crea un nuevo nodo llamado my_first_publisher.py
+
 ```bash
 cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
 touch my_first_publisher.py
 ```
+
 ---
-### Copiar código de template al nuevo nodo y editar NodeName y node_name
+
+### Copiar Código de Template Al Nuevo Nodo Y Editar NodeName Y node_name
+
 ``` python
 import rclpy
 from rclpy.node import Node
@@ -634,7 +687,9 @@ class MyFirstPublisher(Node):
         # Create timers
     # Create callback methods (subscribers and timers)
 ```
+
 ---
+
 ```python[]
 def main(args=None) -> None:
     rclpy.init(args=args)
@@ -648,8 +703,11 @@ if __name__=='__main__':
     except Exception as e:
         print(e)
 ```
+
 ---
-## Agregar ejecutable al setup.py
+
+## Agregar Ejecutable Al setup.py
+
 ``` python
 entry_points = {
 	'console_scripts': [
@@ -657,8 +715,11 @@ entry_points = {
 		],
 }
 ```
+
 ---
-## Agregar atributos 
+
+## Agregar Atributos
+
 ``` python
 import rclpy
 from rclpy.node import Node
@@ -673,10 +734,14 @@ class MyFirstPublisher(Node):
         # Create timers
     # Create callback methods (subscribers and timers)
 ```
+
 ---
+
 ## Agregar Timers
+
 - Definir el periodo del Tic-Tac
 - La función *callback* que ejecuta en cada periodo
+
 ---
 
 ```python[]
@@ -697,13 +762,15 @@ class MyFirstPublisher(Node):
     def timer_callback(self):
 	    self.counter = self.counter + 1
 ```
+
 ---
 
 ## Agregar Publishers
+
 - Definir la clase del message: tipo de message
 	- Importar la interfaz: String de std_msgs.msg
 - El *topic* al cual se publica.
-	
+
 ---
 
 ```python[]
@@ -730,37 +797,48 @@ class MyFirstPublisher(Node):
 	    self.example_publisher.publish(msg)
 	    self.counter = self.counter + 1
 ```
+
 ---
-## Hacer el build del nodo
+
+## Hacer El Build del Nodo
+
 ``` bash
 cd ros2_ws
 colcon build --packages-select ros2_pkg --symlink-install
 source ~/.bashrc
 ```
+
 ---
-## Correr el nodo
+
+## Correr El Nodo
+
 ``` bash
 ros2 run ros2_pkg MyFirstPublisher
 ```
+
 Para confirmar que se haya creado el topic se puede hacer
+
 ``` bash
 ros2 topic list
 ```
+
 Para ver qué está publicando se puede hacer echo
+
 ``` bash
 ros2 topic echo /example_topic
 ```
+
 ---
+
 ![[topic list y topic echo.png]]
 
 ---
 
-### 😵Mucha terminal
-
+### 😵Mucha Terminal
 
 A veces muchos nodos están ejecutándose *al mismo tiempo*, y se vuelve complicado ver como se relacionan
 
-note: 
+note:
 
 Mencionar que puede que tengas muchos topics y quieres verlos de manera gráfica
 
@@ -768,7 +846,7 @@ Mencionar que puede que tengas muchos topics y quieres verlos de manera gráfica
 
 ## RQT Graph
 
-`rqt_graph` es un comando que despliega la gráfica de los nodos corriendo. 
+`rqt_graph` es un comando que despliega la gráfica de los nodos corriendo.
 
 ```sh
 rqt_graph
@@ -776,7 +854,7 @@ rqt_graph
 
 ![[rqt_graph-gui.png|600]]
 
-note: 
+note:
 
 Mostrar el ejemplo practico en clase antes de mostrarlo, y luego muestras el `rqt_graph`
 
@@ -789,14 +867,20 @@ rqt_graph
 ![[my_first_publisher-example_topic.png]]
 
 ---
-## Crear ejemplo de Nodo Subscriber
+
+## Crear Ejemplo de Nodo Subscriber
+
 Ahora se seguirá el mismo procedimiento para crear un nodo subscriber
+
 ```bash
 cd ~/ros2_ws/ros2_pkg/src/ros2_pkg/ros2_pkg
 touch my_first_subscriber.py
 ```
+
 ---
-### Copiar código de template al nuevo nodo y editar NodeName y node_name
+
+### Copiar Código de Template Al Nuevo Nodo Y Editar NodeName Y node_name
+
 ```python[]
 import rclpy
 from rclpy.node import Node
@@ -810,7 +894,9 @@ class MyFirstSubscriber(Node):
         # Create timers
     # Create callback methods (subscribers and timers)
 ```
+
 ---
+
 ```python[]
 def main(args=None) -> None:
     rclpy.init(args=args)
@@ -824,8 +910,11 @@ if __name__=='__main__':
     except Exception as e:
         print(e)
 ```
+
 ---
-## Agregar ejecutable al setup.py
+
+## Agregar Ejecutable Al setup.py
+
 ``` python
 entry_points = {
 	'console_scripts': [
@@ -834,13 +923,19 @@ entry_points = {
 		],
 }
 ```
+
 ---
+
 ## Agregar Subscriber
+
 Para crear un subscriber se requiere de dos partes:
+
 - La variable que está escuchando al topic
 - El callback que se ejecuta cada vez que se recibe un mensaje
 ---
+
 Asegurarse que el tipo de msg y el topic sean los mismos que los del publisher!!
+
 ``` python
 import rclpy
 from rclpy.node import Node
@@ -860,39 +955,57 @@ class MyFirstSubscriber(Node):
 	    msg_received = msg.data
 	    self.get_logger().info("Message received: " + msg_received)
 ```  
+
 ---
-## Hacer el build del nodo
+
+## Hacer El Build del Nodo
+
 ``` bash
 cd ros2_ws
 colcon build --packages-select ros2_pkg --symlink-install
 source ~/.bashrc
 ```
+
 ---
-## Correr publisher y subscriber
+
+## Correr Publisher Y Subscriber
+
 Correr el publisher
+
 ``` bash
 ros2 run ros2_pkg MyFirstPublisher
 ```
+
 Correr el subscriber
+
 ``` bash
 ros2 run ros2_pkg MyFirstSubscriber
 ```
+
 ---
+
 Para ver la interaccion entre ambos se puede ver rqt_graph
+
 ``` bash
 rqt_graph
 ```
+
 ![[rqt_graph publisher y subscriber.png|500]]
 
 ---
-## Crear publishers y subscribers en un mismo nodo
+
+## Crear Publishers Y Subscribers En un Mismo Nodo
+
 Objetivo: Lograr que el subscriber publique el resultado de 2\*n de cada mensaje que reciba en otro topic.
 
-Agregamos: 
+Agregamos:
+
 - Int64 de std_msgs
-- Creamos un counter 
+- Creamos un counter
 - Creamos un publisher
+
 ---
+
 ``` python
 import rclpy
 from rclpy.node import Node
@@ -919,40 +1032,57 @@ class MyFirstSubscriber(Node):
 	    self.publisher_2n.publish(new_msg)
 	    self.counter = self.counter + 1
 ```  
+
 ---
+
 No es necesario hacer *colcon build*, se modificó el nodo.
 De nuevo corremos ambos nodos
 
 Correr el publisher
+
 ``` bash
 ros2 run ros2_pkg MyFirstPublisher
 ```
+
 Correr el subscriber
+
 ``` bash
 ros2 run ros2_pkg MyFirstSubscriber
 ```
+
 ---
+
 Podemos hacer topic list y deben aparecer los 2 topics
+
 ``` bash
 ros2 run topic list
 ```
+
 Tambien podemos hacer echo al nuevo topic
+
 ``` bash
 ros2 run topic echo /multiplier_topic
 ```
+
 Finalmente podemos revisar rqt_graph
 Correr el publisher
+
 ``` bash
 rqt_graph
 ```
+
 ---
+
 ![[rqt_graph modified subscriber.png]]
 
 ---
+
 ### Interfaces
+
 Hasta ahora hemos visto algunos tipos de mensajes ya incluidos por ROS de std_msgs.
 
 Podemos ver todos los mensajes que existe:
+
 ``` bash
 ros2 interface list
 ```
@@ -960,30 +1090,38 @@ ros2 interface list
 ---
 
 Para ver qué contiene un tipo de mensaje se usa el siguiente comando:
+
 ``` bash
 ros2 interface show <interfaz>
 ```
 
 ---
+
 Por ejemplo, para ver la interfaz de example_interfaces/msg/String:
+
 ``` bash
 ros2 interface show example_interfaces/msg/String
 ```
+
 ![[ros2 interface show example_interfaces_msg_string.png]]
 Aqui se puede observar que tiene solo un field llamado "data" de tipo String en el mensaje String.
 
 ---
-## Crear interfaces
+
+## Crear Interfaces
+
 Algo muy recomendado es crear tus propios mensajes
 Para esto se sigue la siguiente metodología
 
 Crear un nuevo package:
+
 ``` bash
 cd ros2_ws/src
 ros2 pkg create my_custom_interfaces
 ```
 
 Ahora vamos a configurar el package:
+
 ```
 cd my_custom_interfaces
 rm -rf include/
@@ -992,144 +1130,197 @@ mkdir msg
 ```
 
 ---
+
 Dentro de este nuevo package, entra al archivo *package.xml* y vamos a editarlo
 
 Debajo de:
-```
+
+```xml[]
 <buildtool_depend>ament_cmake</buildtool_depend>
 ```
+
 Agrega las siguientes 3 líneas:
-``` xml
+
+```xml[]
 <build_depend>rosidl_default_generators</build_depend>
 <exec_depend>rosidl_default_runtime</exec_depend>
 <member_of_group>rosidl_interface_packages</member_of_group>
 ```
+
 ---
+
 Ahora entra al archivo CMakeLists.txt
 
 Borra la sección de *if(BUILD_TESTING)*
 
 Ahora en la sección de *find_dependencies* agrega las siguientes líneas:
-```
+
+```cmake
 find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME})
 ament_export_dependencies(rosidl_default_runtime)
 ```
+
 Con esto el paquete ya está configurado y puedes empezar a hacer tus propios mensajes
 
 ---
 
 En la terminal vamos a crear un nuevo archivo tipo *.msg* llamado *MyCustomMsg*
-``` bash
+
+```bash
 cd ros2_ws/src/my_custom_interfaces/msg
 touch MyCustomMsg.msg
 ```
+
 IMPORTANTE: Los nombres de los mensajes deben empezar con Mayúscula, y todas las palabras nuevas llevan mayúscula también
 
 ---
+
 Abrimos el archivo y vamos a agregar las siguientes líneas:
-```
+
+```[]
 string data1
 bool data2
 int64[3] data3
 ```
+
 Ahora en el archivo de CMakeLists, edita la línea de rosidl_generate_interfaces(${PROJECT_NAME}) para que te quede así:
-```
+
+```cmake[]
 rosidl_generate_interfaces({PROJECT_NAME}
 	"msg/MyCustomMsg.msg"
 )
 ```
+
 ---
+
 Ahora hacemos el build del package
+
 ```
 cd ros2_ws
 colcon build --packages-select my_custom_interfaces
 ```
+
 En una terminal nueva, podemos revisar que ahora nos aparezca nuestro nuevo mensaje
+
 ``` bash
 ros2 interface list
 ```
 
 ---
+
 También podemos revisar qué información contiene el mensaje
+
 ``` bash
 ros2 interface show my_custom_interface/msg/MyCustomMsg
 ```
 
 ![[MyCustomMsg.png]]
+
 ---
-Finalmente vamos a agregar la dependencia al paquete de 
+
+Finalmente vamos a agregar la dependencia al paquete de
 *ros2_pkg*
 
 Abre el *package.xml* de *ros2_pkg* y agrega la siguiente línea:
-``` xml
+
+```xml[]
 <depend>my_custom_interfaces</depend>
 ```
+
 ---
 
 Ahora cuando quieras usar este mensaje, lo único que hay que hacer es importarlo al código como
-``` python
+
+```python[]
 from my_custom_interfaces.msg import MyCustomMsg
 ```
 
-note: Si VScode  marca error, tenemos que agregarle un path para que pueda encontrar el archivo.
+note: Si VScode marca error, tenemos que agregarle un path para que pueda encontrar el archivo.
 Ve a Preferences->Settings->Python Auto Complete: Extra Paths->Edit in settings.json
 
 ---
+
 ## Recap🔙
+
 Pasos para crear un nodo:
+
 1. Crear un archivo .py y agregar lo necesario (publishers, subscribers, atributos, métodos, etc.)
 2. Agregarlo a setup.py
 3. Hacer el build en el *directorio del workspace*
-4. Hacer el source del proyecto 
-```sh 
+4. Hacer el source del proyecto
+
+```bash 
 source ~/.bashrc 
 ```
+
 5. Correr el nodo
-```sh
+
+```bash
 ros2 run <package> <nodo>
 ```
+
 ---
 <!-- .slide: data-auto-animate -->
+
 ## ¿Dudas?🤔
+
 ---
 <!-- .slide: data-auto-animate -->
-## Ahora siguen ustedes!😎
+
+## Ahora Siguen ustedes!😎
+
 ---
 <!-- .slide: data-auto-animate -->
-## Ahora siguen ustedes!😎
-### Problema a resolver
+
+## Ahora Siguen ustedes!😎
+
+### Problema a Resolver
+
 Se tiene un *Nodo* corriendo en una Raspberri Pi que está leyendo constantemente el valor de un sensor ultrasónico y el estado de un pulsador. Esta información la publica en topics diferentes.
 
-A su vez, recibe información de otros dos topics para encender un LED y abrir/cerrar una puerta. 
+A su vez, recibe información de otros dos topics para encender un LED y abrir/cerrar una puerta.
 
 ---
 <!-- .slide: data-auto-animate -->
-## Ahora siguen ustedes!😎
+
+## Ahora Siguen ustedes!😎
+
 ### Objetivo
+
 El proyecto tiene que lograr:
+
 1. Cuando se pulse el botón la puerta se abra y se cierra automáticamente
 2. Cuando haya algún objeto a menos de 10 cm del sensor, el LED se encienda
 ---
-### Diagrama de nodos esperado 
 
-```mermaid
+<!-- .slide: data-auto-animate -->
+
+### Diagrama de Nodos Esperado
+
+```mermaid <!-- element style="width:130%; height:auto;" -->
 graph TD
-	subgraph CustomSize [1500px,1400px]
-		RPI([NodoRPI]) --> B[" /estado boton"]
-		B --> C([Nodo1]) --> pwm["/pwm_servo"]
-		pwm --> RPI
-		RPI --> dist["/distancia_sensor"]
-		dist --> D([Nodo2])
-		D --> L["/estado_led"] --> RPI
-	end
+	RPI([NodoRPI]) --> B[" /estado boton"]
+	B --> C([Nodo1]) --> pwm["/pwm_servo"]
+	pwm --> RPI
+	RPI --> dist["/distancia_sensor"]
+	dist --> D([Nodo2])
+	D --> L["/estado_led"] --> RPI
 ```
+
 ---
+
+<!-- .slide: data-auto-animate -->
+
+### Diagrama de Nodos Esperado
 
 ![[ejemplo_taller.png]]
+
 ---
+
 ### Nodo RPi
-- **/estado_led**: Tipo Bool. Enciende o apaga el LED. 
+
+- **/estado_led**: Tipo Bool. Enciende o apaga el LED.
 - **/pwm_servo**: Tipo String:
 	- "ABRIR" - Abre la puerta
 	- "CERRAR" - Cierra la puerta
@@ -1146,30 +1337,35 @@ Los mensajes se obtuvieron de [std_msgs](https://docs.ros2.org/foxy/api/std_msgs
 Nodo 1
 
 Objetivo: Abrir y cerrar la puerta cada vez que se presione el boton
-1. Crear subscriber a /estado_boton 
-2. Crear publisher a /pwm_servo 
+
+1. Crear subscriber a /estado_boton
+2. Crear publisher a /pwm_servo
 3. Procesar la información
 4. Publicar en /pwm_servo
-</div> 
+</div>
 <div style="flex: 1; font-size: 30x;">
 Nodo 2
 
 Objetivo: Encender el LED si hay algo cerca del sensor
+
 1. Crear subscriber a /distancia_sensor
 2. Crear subscriber a /estado_LED
 3. Procesar la información
 4. Publicar en /estado_LED
 
-</div> 
+</div>
 </div>
 
 ---
 <!-- .slide: data-auto-animate -->
+
 ### Solución Nodo 1
 
 ---
 <!-- .slide: data-auto-animate -->
+
 ### Solución Nodo 1
+
 ```python
 # Abre y cierra la puerta cada vez que se oprime el boton
 import rclpy
@@ -1201,6 +1397,7 @@ class Nodo1(Node):
             msg_servo.data = "CERRAR"
             self.publisher_servo.publish(msg_servo)
 ```
+
 %%Mostrar codigo desde la VM %%
 
 ---
@@ -1234,9 +1431,10 @@ class Nodo2(Node):
 	
 
 ```
+
 ---
 
-```python
+```python[]
 def callback_distancia(self,msg):
 	distancia = msg.data
 	msg_LED = Bool()
@@ -1245,5 +1443,17 @@ def callback_distancia(self,msg):
 	else: 
 		msg_LED.data = False
 	self.publisher_LED.publish(msg_LED)
-
 ```
+
+>
+
+note:
+
+TLDR: NO BORREN EL ">"
+
+Explicación:
+
+Resulta que el redering the advanced slides busca html (E.g. \<div\>\</div\>). Por lo que cuando pones lo de `distancia < 10.0` se confunde porque "falta" el \> 
+
+---
+
